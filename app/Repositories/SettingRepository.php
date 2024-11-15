@@ -2,30 +2,28 @@
 
 namespace App\Repositories;
 
-use App\Models\Course;
+use App\Models\Setting;
 use App\Repositories\BaseRepository;
 
 /**
- * Class CourseRepository
+ * Class SettingRepository
  * @package App\Repositories
- * @version September 19, 2024, 11:45 am UTC
+ * @version November 15, 2024, 6:47 pm UTC
 */
 
-class CourseRepository extends BaseRepository
+class SettingRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'course_name',
-        'programme_type',
-        'duration',
-        'core_courses',
-        'course_units',
-        'admission_requirements',
-        'fees',
-        'category',
-        'credit_units'
+        'institution_name',
+        'copyright',
+        'system_logo',
+        'motto',
+        'address',
+        'contact_one',
+        'contact_two'
     ];
 
     /**
@@ -43,6 +41,6 @@ class CourseRepository extends BaseRepository
      **/
     public function model()
     {
-        return Course::class;
+        return Setting::class;
     }
 }

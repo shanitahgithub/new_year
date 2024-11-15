@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Course;
+use App\Models\Setting;
 
-class UpdateCourseRequest extends FormRequest
+class CreateSettingRequest extends FormRequest
 {
 
     /**
@@ -25,8 +25,6 @@ class UpdateCourseRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Course::$rules;
-        
-        return $rules;
+        return Setting::$rules;
     }
 }

@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Course;
+use App\Models\User;
 
-class CreateCourseRequest extends FormRequest
+class CreateUserRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreateCourseRequest extends FormRequest
      */
     public function rules()
     {
-        return Course::$rules;
+        return User::$rules;
     }
 }
