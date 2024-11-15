@@ -124,11 +124,11 @@ return [
 
     'options' => [
 
-        'softDelete' => true,
+        'softDelete' => false,
 
         'save_schema_file' => true,
 
-        'localized' => true,
+        'localized' => false,
 
         'tables_searchable_default' => false,
 

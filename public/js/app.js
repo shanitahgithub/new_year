@@ -19426,7 +19426,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\laravel\witielearning\stisla-generator\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/golden/Documents/projects/laravel/WITIElearningSystem/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
