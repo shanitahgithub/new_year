@@ -20,9 +20,6 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
-<<<<<<< HEAD
 
 
 Route::resource('courses', App\Http\Controllers\CourseController::class);
-=======
->>>>>>> f86adb9 (project setup)

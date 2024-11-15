@@ -124,19 +124,11 @@ return [
 
     'options' => [
 
-<<<<<<< HEAD
         'softDelete' => false,
 
         'save_schema_file' => true,
 
         'localized' => false,
-=======
-        'softDelete' => true,
-
-        'save_schema_file' => true,
-
-        'localized' => true,
->>>>>>> f86adb9 (project setup)
 
         'tables_searchable_default' => false,
 
