@@ -9,7 +9,7 @@
                 <th>Image</th>
                 <th>Status</th>
                 <th>Phone Number Two</th>
-                <th>Role Id</th>
+                <th>Role</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -21,9 +21,20 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone_number }}</td>
                 <td>{{ $user->image }}</td>
-                <td>{{ $user->status }}</td>
+                <td>
+                    @if ($user->status == 'active')
+                    <span class="badge badge-success">{{ $user->status }}</span>
+                    @elseif ($user->status == 'inactive')
+                    <span class="badge badge-danger">{{ $user->status }}</span>
+                    @elseif ($user->status == 'pending')
+                    <span class="badge badge-warning">{{ $user->status }}</span>
+                    @else
+                    <span class="badge badge-secondary">{{ $user->status }}</span>
+                    @endif
+                </td>
+
                 <td>{{ $user->phone_number_two }}</td>
-                <td>{{ $user->role_id }}</td>
+                <td>{{ $user->role->name }}</td>
                 <td class=" text-center">
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

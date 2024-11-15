@@ -58,3 +58,17 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('users.index') }}" class="btn btn-light">Cancel</a>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#imageInput').change(function(event) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').attr('src', e.target.result).show(); // Display the image
+            };
+            reader.readAsDataURL(this.files[0]); // Read the selected file as a data URL
+        });
+    });
+</script>

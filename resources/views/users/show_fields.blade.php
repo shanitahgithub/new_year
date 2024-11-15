@@ -22,11 +22,7 @@
     <p>{{ $user->phone_number }}</p>
 </div>
 
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Password:') !!}
-    <p>{{ $user->password }}</p>
-</div>
+
 
 <!-- Image Field -->
 <div class="form-group">
@@ -48,8 +44,8 @@
 
 <!-- Role Id Field -->
 <div class="form-group">
-    {!! Form::label('role_id', 'Role Id:') !!}
-    <p>{{ $user->role_id }}</p>
+    {!! Form::label('role_id', 'Role :') !!}
+    <p>{{ $user->role->name}}</p>
 </div>
 
 <!-- Created At Field -->

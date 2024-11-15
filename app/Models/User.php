@@ -6,6 +6,7 @@ use Eloquent as Model;
 use Spatie\Permission\Traits\HasRoles; 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Models\Role;
 
 /**
  * Class User
@@ -79,4 +80,10 @@ class User extends Authenticatable
     ];
 
     
+
+    // Define relationship with Role model
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
