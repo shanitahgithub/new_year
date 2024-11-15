@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!-- First Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('first_name', 'First Name:') !!}
@@ -19,14 +24,14 @@
 <!-- Phone Number Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('phone_number', 'Phone Number:') !!}
-    {!! Form::number('phone_number', null, ['class' => 'form-control','min' => 10,'max' => 10]) !!}
+    {!! Form::text('phone_number', null, ['class' => 'form-control','min' => 10,'max' => 10]) !!}
 </div>
 
 <!-- Password Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('password', 'Password:') !!}
     {!! Form::text('password', null, ['class' => 'form-control','minlength' => 8,'maxlength' => 10]) !!}
-</div>
+</div> -->
 
 <!-- Image Field -->
 <div class="form-group col-sm-6">
@@ -38,13 +43,14 @@
 <!-- Phone Number Two Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('phone_number_two', 'Phone Number Two:') !!}
-    {!! Form::number('phone_number_two', null, ['class' => 'form-control','min' => 10,'max' => 10]) !!}
+    {!! Form::text('phone_number_two', null, ['class' => 'form-control','min' => 10,'max' => 10]) !!}
 </div>
 
 <!-- Role Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('role_id', 'Role Id:') !!}
-    {!! Form::text('role_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('role_id', 'Role:') !!}
+    {!! Form::select('role_id', $roles, null, ['class' => 'form-control']) !!}
+
 </div>
 
 <!-- Submit Field -->

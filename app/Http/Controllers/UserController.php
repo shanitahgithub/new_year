@@ -9,6 +9,8 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use Spatie\Permission\Models\Role;
+
 
 class UserController extends AppBaseController
 {
@@ -42,7 +44,11 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+
+        $roles = Role::pluck('name', 'id')->toArray();
+
+
+        return view('users.create',compact('roles'));
     }
 
     /**
