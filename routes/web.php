@@ -23,3 +23,6 @@ Auth::routes();
 
 
 Route::resource('settings', App\Http\Controllers\SettingController::class);
+
+
+Route::resource('users', App\Http\Controllers\UserController::class);

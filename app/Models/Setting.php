@@ -62,11 +62,11 @@ class Setting extends Model
      * @var array
      */
     public static $rules = [
-        'institution_name' => 'required|string|min:5|max:150|unique:settings,institution_name',
+        'institution_name' => 'required|string|min:4|max:150|unique:settings,institution_name',
         'copyright' => 'nullable|string|min:5|max:150',
         'system_logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         'motto' => 'required|string|min:5|max:150',
-        'address' => 'require|string|min:5|max:150',
+        'address' => 'required|string|min:5|max:150',
         'contact_one' => 'required|min:10|max:10|string',
         'contact_two' => 'nullable|min:10|max:10|unique:settings,contact_two'
     ];
