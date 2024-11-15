@@ -3,7 +3,10 @@
         <i class=" fas fa-building"></i><span>Dashboard</span>
     </a>
 </li>
+<<<<<<< HEAD
 <li class="{{ Request::is('courses*') ? 'active' : '' }}">
     <a href="{{ route('courses.index') }}"><i class="fa fa-edit"></i><span>@lang('models/courses.plural')</span></a>
 </li>
 
+=======
+>>>>>>> f86adb9 (project setup)

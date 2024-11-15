@@ -67,9 +67,15 @@
 a {
     color: #6777ef;
     font-weight: 500;
+<<<<<<< HEAD
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
+=======
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .ion,
@@ -112,6 +118,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     background-color: #191d21 !important;
 }
 
+<<<<<<< HEAD
 .text-primary,
 .text-primary-all *,
 .text-primary-all *:before,
@@ -172,6 +179,41 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 .text-dark-all *,
 .text-dark-all *:before,
 .text-dark-all *:after {
+=======
+.text-primary, .text-primary-all *, .text-primary-all *:before, .text-primary-all *:after {
+    color: #6777ef !important;
+}
+
+.text-secondary, .text-secondary-all *, .text-secondary-all *:before, .text-secondary-all *:after {
+    color: #cdd3d8 !important;
+}
+
+.text-success, .text-success-all *, .text-success-all *:before, .text-success-all *:after {
+    color: #47c363 !important;
+}
+
+.text-info, .text-info-all *, .text-info-all *:before, .text-info-all *:after {
+    color: #3abaf4 !important;
+}
+
+.text-warning, .text-warning-all *, .text-warning-all *:before, .text-warning-all *:after {
+    color: #ffa426 !important;
+}
+
+.text-danger, .text-danger-all *, .text-danger-all *:before, .text-danger-all *:after {
+    color: #fc544b !important;
+}
+
+.text-light, .text-light-all *, .text-light-all *:before, .text-light-all *:after {
+    color: #e3eaef !important;
+}
+
+.text-white, .text-white-all *, .text-white-all *:before, .text-white-all *:after {
+    color: #ffffff !important;
+}
+
+.text-dark, .text-dark-all *, .text-dark-all *:before, .text-dark-all *:after {
+>>>>>>> f86adb9 (project setup)
     color: #191d21 !important;
 }
 
@@ -190,6 +232,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 }
 
+<<<<<<< HEAD
 h1,
 h2,
 h3,
@@ -202,6 +245,13 @@ h6 {
 p,
 ul:not(.list-unstyled),
 ol {
+=======
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+p, ul:not(.list-unstyled), ol {
+>>>>>>> f86adb9 (project setup)
     line-height: 28px;
 }
 
@@ -299,7 +349,11 @@ select.form-control:not([size]):not([multiple]) {
     font-weight: 600;
     color: #34395e;
     font-size: 12px;
+<<<<<<< HEAD
     letter-spacing: 0.5px;
+=======
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
 }
 
 .form-group.floating-addon {
@@ -323,8 +377,12 @@ select.form-control:not([size]):not([multiple]) {
     right: 0;
 }
 
+<<<<<<< HEAD
 .form-group.floating-addon .input-group-prepend .input-group-text,
 .form-group.floating-addon .input-group-append .input-group-text {
+=======
+.form-group.floating-addon .input-group-prepend .input-group-text, .form-group.floating-addon .input-group-append .input-group-text {
+>>>>>>> f86adb9 (project setup)
     border-color: transparent;
     background-color: transparent;
     font-size: 20px;
@@ -364,8 +422,12 @@ select.form-control:not([size]):not([multiple]) {
     border-color: transparent;
 }
 
+<<<<<<< HEAD
 .custom-file-label:focus,
 .custom-file-label:active {
+=======
+.custom-file-label:focus, .custom-file-label:active {
+>>>>>>> f86adb9 (project setup)
     box-shadow: none;
     outline: none;
 }
@@ -432,8 +494,13 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .selectgroup-button-icon {
+<<<<<<< HEAD
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+=======
+    padding-left: .5rem;
+    padding-right: .5rem;
+>>>>>>> f86adb9 (project setup)
 }
 
 .selectgroup-button-icon i {
@@ -453,7 +520,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .selectgroup-pills .selectgroup-item {
+<<<<<<< HEAD
     margin-right: 0.5rem;
+=======
+    margin-right: .5rem;
+>>>>>>> f86adb9 (project setup)
     flex-grow: 0;
 }
 
@@ -484,7 +555,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .custom-switches-stacked .custom-switch {
+<<<<<<< HEAD
     margin-bottom: 0.5rem;
+=======
+    margin-bottom: .5rem;
+>>>>>>> f86adb9 (project setup)
 }
 
 .custom-switch-indicator {
@@ -496,11 +571,19 @@ select.form-control:not([size]):not([multiple]) {
     position: relative;
     vertical-align: bottom;
     border: 1px solid rgba(0, 40, 100, 0.12);
+<<<<<<< HEAD
     transition: 0.3s border-color, 0.3s background-color;
 }
 
 .custom-switch-indicator:before {
     content: "";
+=======
+    transition: .3s border-color, .3s background-color;
+}
+
+.custom-switch-indicator:before {
+    content: '';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     height: calc(1.25rem - 4px);
     width: calc(1.25rem - 4px);
@@ -508,7 +591,11 @@ select.form-control:not([size]):not([multiple]) {
     left: 1px;
     background: #fff;
     border-radius: 50%;
+<<<<<<< HEAD
     transition: 0.3s left;
+=======
+    transition: .3s left;
+>>>>>>> f86adb9 (project setup)
 }
 
 .custom-switch-input:checked ~ .custom-switch-indicator {
@@ -524,9 +611,15 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .custom-switch-description {
+<<<<<<< HEAD
     margin-left: 0.5rem;
     color: #6e7687;
     transition: 0.3s color;
+=======
+    margin-left: .5rem;
+    color: #6e7687;
+    transition: .3s color;
+>>>>>>> f86adb9 (project setup)
 }
 
 .custom-switch-input:checked ~ .custom-switch-description {
@@ -564,10 +657,17 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .imagecheck-figure:before {
+<<<<<<< HEAD
     content: "";
     position: absolute;
     top: 0.25rem;
     left: 0.25rem;
+=======
+    content: '';
+    position: absolute;
+    top: .25rem;
+    left: .25rem;
+>>>>>>> f86adb9 (project setup)
     display: block;
     width: 1rem;
     height: 1rem;
@@ -576,14 +676,22 @@ select.form-control:not([size]):not([multiple]) {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+<<<<<<< HEAD
     background: #6777ef
         url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E")
         no-repeat center center/50% 50%;
+=======
+    background: #6777ef url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
+>>>>>>> f86adb9 (project setup)
     color: #fff;
     z-index: 1;
     border-radius: 3px;
     opacity: 0;
+<<<<<<< HEAD
     transition: 0.3s opacity;
+=======
+    transition: .3s opacity;
+>>>>>>> f86adb9 (project setup)
 }
 
 .imagecheck-input:checked ~ .imagecheck-figure:before {
@@ -592,8 +700,13 @@ select.form-control:not([size]):not([multiple]) {
 
 .imagecheck-image {
     max-width: 100%;
+<<<<<<< HEAD
     opacity: 0.64;
     transition: 0.3s opacity;
+=======
+    opacity: .64;
+    transition: .3s opacity;
+>>>>>>> f86adb9 (project setup)
 }
 
 .imagecheck-image:first-child {
@@ -610,25 +723,40 @@ select.form-control:not([size]):not([multiple]) {
     opacity: 1;
 }
 
+<<<<<<< HEAD
 .imagecheck-input:focus ~ .imagecheck-figure .imagecheck-image,
 .imagecheck-input:checked ~ .imagecheck-figure .imagecheck-image {
+=======
+.imagecheck-input:focus ~ .imagecheck-figure .imagecheck-image, .imagecheck-input:checked ~ .imagecheck-figure .imagecheck-image {
+>>>>>>> f86adb9 (project setup)
     opacity: 1;
 }
 
 .imagecheck-caption {
     text-align: center;
+<<<<<<< HEAD
     padding: 0.25rem 0.25rem;
     color: #9aa0ac;
     font-size: 0.875rem;
     transition: 0.3s color;
+=======
+    padding: .25rem .25rem;
+    color: #9aa0ac;
+    font-size: 0.875rem;
+    transition: .3s color;
+>>>>>>> f86adb9 (project setup)
 }
 
 .imagecheck:hover .imagecheck-caption {
     color: #495057;
 }
 
+<<<<<<< HEAD
 .imagecheck-input:focus ~ .imagecheck-figure .imagecheck-caption,
 .imagecheck-input:checked ~ .imagecheck-figure .imagecheck-caption {
+=======
+.imagecheck-input:focus ~ .imagecheck-figure .imagecheck-caption, .imagecheck-input:checked ~ .imagecheck-figure .imagecheck-caption {
+>>>>>>> f86adb9 (project setup)
     color: #495057;
 }
 
@@ -658,6 +786,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .colorinput-color:before {
+<<<<<<< HEAD
     content: "";
     opacity: 0;
     position: absolute;
@@ -668,6 +797,17 @@ select.form-control:not([size]):not([multiple]) {
     transition: 0.3s opacity;
     background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E")
         no-repeat center center/50% 50%;
+=======
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: .25rem;
+    left: .25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    transition: .3s opacity;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
+>>>>>>> f86adb9 (project setup)
 }
 
 .colorinput-input:checked ~ .colorinput-color:before {
@@ -775,11 +915,15 @@ select.form-control:not([size]):not([multiple]) {
     width: 30px;
 }
 
+<<<<<<< HEAD
 .alert.alert-has-icon .alert-icon .ion,
 .alert.alert-has-icon .alert-icon .fas,
 .alert.alert-has-icon .alert-icon .far,
 .alert.alert-has-icon .alert-icon .fab,
 .alert.alert-has-icon .alert-icon .fal {
+=======
+.alert.alert-has-icon .alert-icon .ion, .alert.alert-has-icon .alert-icon .fas, .alert.alert-has-icon .alert-icon .far, .alert.alert-has-icon .alert-icon .fab, .alert.alert-has-icon .alert-icon .fal {
+>>>>>>> f86adb9 (project setup)
     font-size: 20px;
 }
 
@@ -834,9 +978,13 @@ select.form-control:not([size]):not([multiple]) {
     margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .card .card-header,
 .card .card-body,
 .card .card-footer {
+=======
+.card .card-header, .card .card-body, .card .card-footer {
+>>>>>>> f86adb9 (project setup)
     background-color: transparent;
     padding: 20px 25px;
 }
@@ -955,6 +1103,7 @@ select.form-control:not([size]):not([multiple]) {
     border-radius: 30px 0 0 30px !important;
 }
 
+<<<<<<< HEAD
 .card
     .card-header
     h4
@@ -988,6 +1137,15 @@ select.form-control:not([size]):not([multiple]) {
     .input-group
     .input-group-btn
     + .form-control {
+=======
+.card .card-header h4 + .card-header-action .input-group .form-control + .input-group-btn .btn,
+.card .card-header h4 + .card-header-form .input-group .form-control + .input-group-btn .btn {
+    border-radius: 0 30px 30px 0 !important;
+}
+
+.card .card-header h4 + .card-header-action .input-group .input-group-btn + .form-control,
+.card .card-header h4 + .card-header-form .input-group .input-group-btn + .form-control {
+>>>>>>> f86adb9 (project setup)
     border-radius: 0 30px 30px 0 !important;
 }
 
@@ -1007,7 +1165,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .card.card-progress:after {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     top: 0;
     left: 0;
@@ -1095,6 +1257,7 @@ select.form-control:not([size]):not([multiple]) {
     margin: -60px;
 }
 
+<<<<<<< HEAD
 .card.card-hero .card-header .card-icon .ion,
 .card.card-hero .card-header .card-icon .fas,
 .card.card-hero .card-header .card-icon .far,
@@ -1105,6 +1268,13 @@ select.form-control:not([size]):not([multiple]) {
 
 .card.card-statistic-1 .card-header,
 .card.card-statistic-2 .card-header {
+=======
+.card.card-hero .card-header .card-icon .ion, .card.card-hero .card-header .card-icon .fas, .card.card-hero .card-header .card-icon .far, .card.card-hero .card-header .card-icon .fab, .card.card-hero .card-header .card-icon .fal {
+    font-size: 140px;
+}
+
+.card.card-statistic-1 .card-header, .card.card-statistic-2 .card-header {
+>>>>>>> f86adb9 (project setup)
     border-color: transparent;
     padding-bottom: 0;
     height: auto;
@@ -1123,22 +1293,34 @@ select.form-control:not([size]):not([multiple]) {
     padding-top: 0;
 }
 
+<<<<<<< HEAD
 .card.card-statistic-1 .card-body,
 .card.card-statistic-2 .card-body {
+=======
+.card.card-statistic-1 .card-body, .card.card-statistic-2 .card-body {
+>>>>>>> f86adb9 (project setup)
     font-size: 26px;
     font-weight: 700;
     color: #34395e;
     padding-bottom: 0;
 }
 
+<<<<<<< HEAD
 .card.card-statistic-1,
 .card.card-statistic-2 {
+=======
+.card.card-statistic-1, .card.card-statistic-2 {
+>>>>>>> f86adb9 (project setup)
     display: inline-block;
     width: 100%;
 }
 
+<<<<<<< HEAD
 .card.card-statistic-1 .card-icon,
 .card.card-statistic-2 .card-icon {
+=======
+.card.card-statistic-1 .card-icon, .card.card-statistic-2 .card-icon {
+>>>>>>> f86adb9 (project setup)
     width: 80px;
     height: 80px;
     margin: 10px;
@@ -1149,6 +1331,7 @@ select.form-control:not([size]):not([multiple]) {
     margin-right: 15px;
 }
 
+<<<<<<< HEAD
 .card.card-statistic-1 .card-icon .ion,
 .card.card-statistic-1 .card-icon .fas,
 .card.card-statistic-1 .card-icon .far,
@@ -1159,6 +1342,9 @@ select.form-control:not([size]):not([multiple]) {
 .card.card-statistic-2 .card-icon .far,
 .card.card-statistic-2 .card-icon .fab,
 .card.card-statistic-2 .card-icon .fal {
+=======
+.card.card-statistic-1 .card-icon .ion, .card.card-statistic-1 .card-icon .fas, .card.card-statistic-1 .card-icon .far, .card.card-statistic-1 .card-icon .fab, .card.card-statistic-1 .card-icon .fal, .card.card-statistic-2 .card-icon .ion, .card.card-statistic-2 .card-icon .fas, .card.card-statistic-2 .card-icon .far, .card.card-statistic-2 .card-icon .fab, .card.card-statistic-2 .card-icon .fal {
+>>>>>>> f86adb9 (project setup)
     font-size: 22px;
     color: #fff;
 }
@@ -1175,8 +1361,12 @@ select.form-control:not([size]):not([multiple]) {
     margin: 25px;
 }
 
+<<<<<<< HEAD
 .card.card-statistic-1 .card-header,
 .card.card-statistic-2 .card-header {
+=======
+.card.card-statistic-1 .card-header, .card.card-statistic-2 .card-header {
+>>>>>>> f86adb9 (project setup)
     padding-bottom: 0;
     padding-top: 25px;
 }
@@ -1190,11 +1380,18 @@ select.form-control:not([size]):not([multiple]) {
     padding-top: 0;
 }
 
+<<<<<<< HEAD
 .card.card-statistic-1 .card-header h4,
 .card.card-statistic-2 .card-header h4 {
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.5px;
+=======
+.card.card-statistic-1 .card-header h4, .card.card-statistic-2 .card-header h4 {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
 }
 
 .card.card-statistic-1 .card-header h4 {
@@ -1233,7 +1430,11 @@ select.form-control:not([size]):not([multiple]) {
     background-color: #fff;
     font-size: 13px;
     font-weight: 600;
+<<<<<<< HEAD
     letter-spacing: 0.3px;
+=======
+    letter-spacing: .3px;
+>>>>>>> f86adb9 (project setup)
 }
 
 .card .card-stats .card-stats-items {
@@ -1250,7 +1451,11 @@ select.form-control:not([size]):not([multiple]) {
 
 .card .card-stats .card-stats-item .card-stats-item-label {
     font-size: 12px;
+<<<<<<< HEAD
     letter-spacing: 0.5px;
+=======
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
     margin-top: 4px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -1278,11 +1483,15 @@ select.form-control:not([size]):not([multiple]) {
     border-radius: 3px 0 0 3px;
 }
 
+<<<<<<< HEAD
 .card.card-large-icons .card-icon .ion,
 .card.card-large-icons .card-icon .fas,
 .card.card-large-icons .card-icon .far,
 .card.card-large-icons .card-icon .fab,
 .card.card-large-icons .card-icon .fal {
+=======
+.card.card-large-icons .card-icon .ion, .card.card-large-icons .card-icon .fas, .card.card-large-icons .card-icon .far, .card.card-large-icons .card-icon .fab, .card.card-large-icons .card-icon .fal {
+>>>>>>> f86adb9 (project setup)
     font-size: 60px;
 }
 
@@ -1295,7 +1504,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .card.card-large-icons .card-body p {
+<<<<<<< HEAD
     opacity: 0.6;
+=======
+    opacity: .6;
+>>>>>>> f86adb9 (project setup)
     font-weight: 500;
 }
 
@@ -1307,6 +1520,7 @@ select.form-control:not([size]):not([multiple]) {
     margin-left: 7px;
 }
 
+<<<<<<< HEAD
 .card.bg-primary,
 .card.bg-danger,
 .card.bg-success,
@@ -1324,6 +1538,15 @@ select.form-control:not([size]):not([multiple]) {
 .card.bg-warning .card-header {
     color: #fff;
     opacity: 0.9;
+=======
+.card.bg-primary, .card.bg-danger, .card.bg-success, .card.bg-info, .card.bg-dark, .card.bg-warning {
+    color: #fff;
+}
+
+.card.bg-primary .card-header, .card.bg-danger .card-header, .card.bg-success .card-header, .card.bg-info .card-header, .card.bg-dark .card-header, .card.bg-warning .card-header {
+    color: #fff;
+    opacity: .9;
+>>>>>>> f86adb9 (project setup)
 }
 
 @media (max-width: 575.98px) {
@@ -1360,11 +1583,15 @@ select.form-control:not([size]):not([multiple]) {
         padding: 5px 7px;
     }
 
+<<<<<<< HEAD
     .card
         .card-stats
         .card-stats-items
         .card-stats-item
         .card-stats-item-count {
+=======
+    .card .card-stats .card-stats-items .card-stats-item .card-stats-item-count {
+>>>>>>> f86adb9 (project setup)
         font-size: 16px;
     }
 
@@ -1382,8 +1609,12 @@ select.form-control:not([size]):not([multiple]) {
     color: inherit;
 }
 
+<<<<<<< HEAD
 .table td,
 .table:not(.table-bordered) th {
+=======
+.table td, .table:not(.table-bordered) th {
+>>>>>>> f86adb9 (project setup)
     border-top: none;
 }
 
@@ -1417,7 +1648,11 @@ select.form-control:not([size]):not([multiple]) {
     font-size: 12px;
     margin-top: 5px;
     opacity: 0;
+<<<<<<< HEAD
     transition: all 0.3s;
+=======
+    transition: all .3s;
+>>>>>>> f86adb9 (project setup)
 }
 
 .table-links a {
@@ -1492,7 +1727,11 @@ table tr:hover .table-links {
 }
 
 .modal-progress .modal-content:after {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     top: 0;
     left: 0;
@@ -1531,8 +1770,12 @@ table tr:hover .table-links {
     margin-top: -1px;
 }
 
+<<<<<<< HEAD
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
+=======
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+>>>>>>> f86adb9 (project setup)
     color: #fff;
     background-color: #6777ef;
 }
@@ -1558,11 +1801,15 @@ table tr:hover .table-links {
     margin-left: 5px;
 }
 
+<<<<<<< HEAD
 .nav .nav-item .nav-link .ion,
 .nav .nav-item .nav-link .fas,
 .nav .nav-item .nav-link .far,
 .nav .nav-item .nav-link .fab,
 .nav .nav-item .nav-link .fal {
+=======
+.nav .nav-item .nav-link .ion, .nav .nav-item .nav-link .fas, .nav .nav-item .nav-link .far, .nav .nav-item .nav-link .fab, .nav .nav-item .nav-link .fal {
+>>>>>>> f86adb9 (project setup)
     margin-right: 3px;
     font-size: 12px;
 }
@@ -1583,7 +1830,11 @@ table tr:hover .table-links {
     border-color: transparent;
     background-color: #f9fafe;
     color: #6777ef;
+<<<<<<< HEAD
     opacity: 0.6;
+=======
+    opacity: .6;
+>>>>>>> f86adb9 (project setup)
 }
 
 .page-link {
@@ -1611,7 +1862,11 @@ table tr:hover .table-links {
     vertical-align: middle;
     padding: 7px 12px;
     font-weight: 600;
+<<<<<<< HEAD
     letter-spacing: 0.3px;
+=======
+    letter-spacing: .3px;
+>>>>>>> f86adb9 (project setup)
     border-radius: 30px;
     font-size: 12px;
 }
@@ -1714,8 +1969,12 @@ h6 .badge {
     outline: none;
 }
 
+<<<<<<< HEAD
 .btn.btn-icon-split i,
 .dropdown-item.has-icon i {
+=======
+.btn.btn-icon-split i, .dropdown-item.has-icon i {
+>>>>>>> f86adb9 (project setup)
     text-align: center;
     width: 15px;
     font-size: 15px;
@@ -1727,8 +1986,13 @@ h6 .badge {
     font-weight: 600;
     font-size: 12px;
     line-height: 24px;
+<<<<<<< HEAD
     padding: 0.3rem 0.8rem;
     letter-spacing: 0.5px;
+=======
+    padding: .3rem .8rem;
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
 }
 
 .btn.btn-icon-split {
@@ -1770,9 +2034,13 @@ h6 .badge {
     padding-left: 10px;
 }
 
+<<<<<<< HEAD
 .btn:not(.btn-social):not(.btn-social-icon):active,
 .btn:not(.btn-social):not(.btn-social-icon):focus,
 .btn:not(.btn-social):not(.btn-social-icon):hover {
+=======
+.btn:not(.btn-social):not(.btn-social-icon):active, .btn:not(.btn-social):not(.btn-social-icon):focus, .btn:not(.btn-social):not(.btn-social-icon):hover {
+>>>>>>> f86adb9 (project setup)
     border-color: transparent !important;
     background-color: white;
 }
@@ -1782,7 +2050,11 @@ h6 .badge {
 }
 
 .btn.btn-lg {
+<<<<<<< HEAD
     padding: 0.55rem 1.5rem;
+=======
+    padding: .55rem 1.5rem;
+>>>>>>> f86adb9 (project setup)
     font-size: 12px;
 }
 
@@ -1795,6 +2067,7 @@ h6 .badge {
 }
 
 .btn.btn-sm {
+<<<<<<< HEAD
     padding: 0.1rem 0.4rem;
     font-size: 12px;
 }
@@ -1804,10 +2077,18 @@ h6 .badge {
 .btn.btn-icon .far,
 .btn.btn-icon .fab,
 .btn.btn-icon .fal {
+=======
+    padding: .10rem .4rem;
+    font-size: 12px;
+}
+
+.btn.btn-icon .ion, .btn.btn-icon .fas, .btn.btn-icon .far, .btn.btn-icon .fab, .btn.btn-icon .fal {
+>>>>>>> f86adb9 (project setup)
     margin-left: 0 !important;
     font-size: 12px;
 }
 
+<<<<<<< HEAD
 .btn.btn-icon.icon-left .ion,
 .btn.btn-icon.icon-left .fas,
 .btn.btn-icon.icon-left .far,
@@ -1821,6 +2102,13 @@ h6 .badge {
 .btn.btn-icon.icon-right .far,
 .btn.btn-icon.icon-right .fab,
 .btn.btn-icon.icon-right .fal {
+=======
+.btn.btn-icon.icon-left .ion, .btn.btn-icon.icon-left .fas, .btn.btn-icon.icon-left .far, .btn.btn-icon.icon-left .fab, .btn.btn-icon.icon-left .fal {
+    margin-right: 3px;
+}
+
+.btn.btn-icon.icon-right .ion, .btn.btn-icon.icon-right .fas, .btn.btn-icon.icon-right .far, .btn.btn-icon.icon-right .fab, .btn.btn-icon.icon-right .fal {
+>>>>>>> f86adb9 (project setup)
     margin-left: 3px !important;
 }
 
@@ -1832,70 +2120,99 @@ h6 .badge {
     min-height: 35px;
 }
 
+<<<<<<< HEAD
 .btn-secondary,
 .btn-secondary.disabled {
+=======
+.btn-secondary, .btn-secondary.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #e1e5e8;
     background-color: #cdd3d8;
     border-color: #cdd3d8;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active,
 .btn-secondary.disabled:hover,
 .btn-secondary.disabled:focus,
 .btn-secondary.disabled:active {
+=======
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.disabled:hover, .btn-secondary.disabled:focus, .btn-secondary.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #bfc6cd !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-outline-secondary:hover,
 .btn-outline-secondary:focus,
 .btn-outline-secondary:active,
 .btn-outline-secondary.disabled:hover,
 .btn-outline-secondary.disabled:focus,
 .btn-outline-secondary.disabled:active {
+=======
+.btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-outline-secondary.disabled:hover, .btn-outline-secondary.disabled:focus, .btn-outline-secondary.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #cdd3d8 !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-success,
 .btn-success.disabled {
+=======
+.btn-success, .btn-success.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #81d694;
     background-color: #47c363;
     border-color: #47c363;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
 .btn-success.disabled:hover,
 .btn-success.disabled:focus,
 .btn-success.disabled:active {
+=======
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #3bb557 !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-outline-success:hover,
 .btn-outline-success:focus,
 .btn-outline-success:active,
 .btn-outline-success.disabled:hover,
 .btn-outline-success.disabled:focus,
 .btn-outline-success.disabled:active {
+=======
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.disabled:hover, .btn-outline-success.disabled:focus, .btn-outline-success.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #47c363 !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-danger,
 .btn-danger.disabled {
+=======
+.btn-danger, .btn-danger.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #fd9b96;
     background-color: #fc544b;
     border-color: #fc544b;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-danger:hover,
 .btn-danger:focus,
 .btn-danger:active,
@@ -1911,18 +2228,30 @@ h6 .badge {
 .btn-outline-danger.disabled:hover,
 .btn-outline-danger.disabled:focus,
 .btn-outline-danger.disabled:active {
+=======
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active {
+    background-color: #fb160a !important;
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.disabled:hover, .btn-outline-danger.disabled:focus, .btn-outline-danger.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #fb160a !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-dark,
 .btn-dark.disabled {
+=======
+.btn-dark, .btn-dark.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #728394;
     background-color: #191d21;
     border-color: #191d21;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active,
@@ -1938,18 +2267,30 @@ h6 .badge {
 .btn-outline-dark.disabled:hover,
 .btn-outline-dark.disabled:focus,
 .btn-outline-dark.disabled:active {
+=======
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.disabled:hover, .btn-dark.disabled:focus, .btn-dark.disabled:active {
+    background-color: black !important;
+}
+
+.btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active, .btn-outline-dark.disabled:hover, .btn-outline-dark.disabled:focus, .btn-outline-dark.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: black !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-light,
 .btn-light.disabled {
+=======
+.btn-light, .btn-light.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #e6ecf1;
     background-color: #e3eaef;
     border-color: #e3eaef;
     color: #191d21;
 }
 
+<<<<<<< HEAD
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active,
@@ -1961,56 +2302,84 @@ h6 .badge {
 
 .btn-outline-light,
 .btn-outline-light.disabled {
+=======
+.btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.disabled:hover, .btn-light.disabled:focus, .btn-light.disabled:active {
+    background-color: #c3d2dc !important;
+}
+
+.btn-outline-light, .btn-outline-light.disabled {
+>>>>>>> f86adb9 (project setup)
     border-color: #e3eaef;
     color: #e3eaef;
 }
 
+<<<<<<< HEAD
 .btn-outline-light:hover,
 .btn-outline-light:focus,
 .btn-outline-light:active,
 .btn-outline-light.disabled:hover,
 .btn-outline-light.disabled:focus,
 .btn-outline-light.disabled:active {
+=======
+.btn-outline-light:hover, .btn-outline-light:focus, .btn-outline-light:active, .btn-outline-light.disabled:hover, .btn-outline-light.disabled:focus, .btn-outline-light.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #e3eaef !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-warning,
 .btn-warning.disabled {
+=======
+.btn-warning, .btn-warning.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #ffc473;
     background-color: #ffa426;
     border-color: #ffa426;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-warning:hover,
 .btn-warning:focus,
 .btn-warning:active,
 .btn-warning.disabled:hover,
 .btn-warning.disabled:focus,
 .btn-warning.disabled:active {
+=======
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #ff990d !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-outline-warning:hover,
 .btn-outline-warning:focus,
 .btn-outline-warning:active,
 .btn-outline-warning.disabled:hover,
 .btn-outline-warning.disabled:focus,
 .btn-outline-warning.disabled:active {
+=======
+.btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning.disabled:hover, .btn-outline-warning.disabled:focus, .btn-outline-warning.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #ffa426 !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-info,
 .btn-info.disabled {
+=======
+.btn-info, .btn-info.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #82d3f8;
     background-color: #3abaf4;
     border-color: #3abaf4;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active,
@@ -2026,17 +2395,29 @@ h6 .badge {
 .btn-outline-info.disabled:hover,
 .btn-outline-info.disabled:focus,
 .btn-outline-info.disabled:active {
+=======
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active {
+    background-color: #0da8ee !important;
+}
+
+.btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.disabled:hover, .btn-outline-info.disabled:focus, .btn-outline-info.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #0da8ee !important;
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .btn-primary,
 .btn-primary.disabled {
+=======
+.btn-primary, .btn-primary.disabled {
+>>>>>>> f86adb9 (project setup)
     box-shadow: 0 2px 6px #acb5f6;
     background-color: #6777ef;
     border-color: #6777ef;
 }
 
+<<<<<<< HEAD
 .btn-primary:focus,
 .btn-primary.disabled:focus {
     background-color: #394eea !important;
@@ -2056,32 +2437,59 @@ h6 .badge {
 
 .btn-outline-primary,
 .btn-outline-primary.disabled {
+=======
+.btn-primary:focus, .btn-primary.disabled:focus {
+    background-color: #394eea !important;
+}
+
+.btn-primary:focus:active, .btn-primary.disabled:focus:active {
+    background-color: #394eea !important;
+}
+
+.btn-primary:active, .btn-primary:hover, .btn-primary.disabled:active, .btn-primary.disabled:hover {
+    background-color: #394eea !important;
+}
+
+.btn-outline-primary, .btn-outline-primary.disabled {
+>>>>>>> f86adb9 (project setup)
     border-color: #6777ef;
     color: #6777ef;
 }
 
+<<<<<<< HEAD
 .btn-outline-primary:hover,
 .btn-outline-primary:focus,
 .btn-outline-primary:active,
 .btn-outline-primary.disabled:hover,
 .btn-outline-primary.disabled:focus,
 .btn-outline-primary.disabled:active {
+=======
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.disabled:hover, .btn-outline-primary.disabled:focus, .btn-outline-primary.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #6777ef !important;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-outline-white,
 .btn-outline-white.disabled {
+=======
+.btn-outline-white, .btn-outline-white.disabled {
+>>>>>>> f86adb9 (project setup)
     border-color: #fff;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-outline-white:hover,
 .btn-outline-white:focus,
 .btn-outline-white:active,
 .btn-outline-white.disabled:hover,
 .btn-outline-white.disabled:focus,
 .btn-outline-white.disabled:active {
+=======
+.btn-outline-white:hover, .btn-outline-white:focus, .btn-outline-white:active, .btn-outline-white.disabled:hover, .btn-outline-white.disabled:focus, .btn-outline-white.disabled:active {
+>>>>>>> f86adb9 (project setup)
     background-color: #fff;
     color: #6777ef;
 }
@@ -2092,8 +2500,12 @@ h6 .badge {
     padding-right: 34px;
 }
 
+<<<<<<< HEAD
 .btn-social-icon,
 .btn-social {
+=======
+.btn-social-icon, .btn-social {
+>>>>>>> f86adb9 (project setup)
     border: none;
     border-radius: 3px;
 }
@@ -2215,7 +2627,11 @@ h6 .badge {
     font-weight: 600;
     font-size: 12px;
     color: #34395e;
+<<<<<<< HEAD
     letter-spacing: 0.5px;
+=======
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
 }
 
 .media .media-items .media-item .media-value {
@@ -2243,8 +2659,12 @@ h6 .badge {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .accordion .accordion-header,
 .accordion .accordion-body {
+=======
+.accordion .accordion-header, .accordion .accordion-body {
+>>>>>>> f86adb9 (project setup)
     padding: 10px 15px;
 }
 
@@ -2252,7 +2672,11 @@ h6 .badge {
     background-color: #f9f9f9;
     border-radius: 3px;
     cursor: pointer;
+<<<<<<< HEAD
     transition: all 0.5s;
+=======
+    transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 .accordion .accordion-header h4 {
@@ -2291,6 +2715,7 @@ h6 .badge {
     color: #fff;
 }
 
+<<<<<<< HEAD
 .bs-popover-auto[x-placement^="left"] .arrow::before,
 .bs-popover-left .arrow::before {
     border-left-color: #f2f2f2;
@@ -2308,6 +2733,21 @@ h6 .badge {
 
 .bs-popover-auto[x-placement^="right"] .arrow::before,
 .bs-popover-right .arrow::before {
+=======
+.bs-popover-auto[x-placement^=left] .arrow::before, .bs-popover-left .arrow::before {
+    border-left-color: #f2f2f2;
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow::before, .bs-popover-bottom .arrow::before {
+    border-bottom-color: #f2f2f2;
+}
+
+.bs-popover-auto[x-placement^=top] .arrow::before, .bs-popover-top .arrow::before {
+    border-top-color: #f2f2f2;
+}
+
+.bs-popover-auto[x-placement^=right] .arrow::before, .bs-popover-right .arrow::before {
+>>>>>>> f86adb9 (project setup)
     border-right-color: #f2f2f2;
 }
 
@@ -2329,8 +2769,12 @@ h6 .badge {
     margin-right: -5px;
 }
 
+<<<<<<< HEAD
 .sm-gutters > .col,
 .sm-gutters > [class*="col-"] {
+=======
+.sm-gutters > .col, .sm-gutters > [class*=col-] {
+>>>>>>> f86adb9 (project setup)
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -2351,13 +2795,21 @@ h6 .badge {
 }
 
 .navbar-bg {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 115px;
+<<<<<<< HEAD
     background-color: maroon;
+=======
+    background-color: #6777ef;
+>>>>>>> f86adb9 (project setup)
     z-index: -1;
 }
 
@@ -2391,6 +2843,7 @@ h6 .badge {
 }
 
 .navbar .form-inline .form-control:focus + .btn + .search-backdrop {
+<<<<<<< HEAD
     opacity: 0.6;
     visibility: visible;
 }
@@ -2401,6 +2854,13 @@ h6 .badge {
     + .btn
     + .search-backdrop
     + .search-result {
+=======
+    opacity: .6;
+    visibility: visible;
+}
+
+.navbar .form-inline .form-control:focus + .btn + .search-backdrop + .search-result {
+>>>>>>> f86adb9 (project setup)
     opacity: 1;
     visibility: visible;
     top: 80px;
@@ -2423,7 +2883,11 @@ h6 .badge {
     background-color: #000;
     opacity: 0;
     visibility: hidden;
+<<<<<<< HEAD
     transition: all 0.5s;
+=======
+    transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 .navbar .form-inline .search-result {
@@ -2435,16 +2899,26 @@ h6 .badge {
     width: 450px;
     opacity: 0;
     visibility: hidden;
+<<<<<<< HEAD
     transition: all 0.5s;
+=======
+    transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 .navbar .form-inline .search-result:before {
     position: absolute;
     top: -26px;
     left: 34px;
+<<<<<<< HEAD
     content: "\f0d8";
     font-weight: 600;
     font-family: "Font Awesome 5 Free";
+=======
+    content: '\f0d8';
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Free';
+>>>>>>> f86adb9 (project setup)
     color: #fff;
     font-size: 30px;
 }
@@ -2558,7 +3032,11 @@ h6 .badge {
 
 .navbar .nav-link.disabled {
     color: #fff;
+<<<<<<< HEAD
     opacity: 0.6;
+=======
+    opacity: .6;
+>>>>>>> f86adb9 (project setup)
 }
 
 .nav-collapse {
@@ -2655,8 +3133,12 @@ h6 .badge {
         color: #6777ef;
     }
 
+<<<<<<< HEAD
     .nav-collapse .navbar-nav .nav-item:focus > a,
     .nav-collapse .navbar-nav .nav-item.active > a {
+=======
+    .nav-collapse .navbar-nav .nav-item:focus > a, .nav-collapse .navbar-nav .nav-item.active > a {
+>>>>>>> f86adb9 (project setup)
         background-color: #6777ef;
         color: #fff;
     }
@@ -2724,9 +3206,13 @@ a.dropdown-item {
     line-height: 1.2;
 }
 
+<<<<<<< HEAD
 a.dropdown-item:focus,
 a.dropdown-item:active,
 a.dropdown-item.active {
+=======
+a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
+>>>>>>> f86adb9 (project setup)
     background-color: #6777ef;
     color: #fff !important;
 }
@@ -2758,7 +3244,11 @@ a.dropdown-item.active {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 10px;
+<<<<<<< HEAD
     letter-spacing: 0.5px;
+=======
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
 }
 
 .dropdown-list .dropdown-item .dropdown-item-avatar {
@@ -2810,10 +3300,14 @@ a.dropdown-item.active {
     color: #6c757d;
 }
 
+<<<<<<< HEAD
 .dropdown-list
     .dropdown-item.dropdown-item-unread:active
     .dropdown-item-desc
     b {
+=======
+.dropdown-list .dropdown-item.dropdown-item-unread:active .dropdown-item-desc b {
+>>>>>>> f86adb9 (project setup)
     color: #6c757d;
 }
 
@@ -2840,7 +3334,11 @@ a.dropdown-item.active {
 
 .dropdown-list .dropdown-footer,
 .dropdown-list .dropdown-header {
+<<<<<<< HEAD
     letter-spacing: 0.5px;
+=======
+    letter-spacing: .5px;
+>>>>>>> f86adb9 (project setup)
     font-weight: 600;
     padding: 15px;
 }
@@ -2856,17 +3354,25 @@ a.dropdown-item.active {
 }
 
 .dropdown-list .dropdown-list-content:not(.is-end):after {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     bottom: 46px;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     background-image: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0.4),
         rgba(255, 255, 255, 0.8)
     );
+=======
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
+>>>>>>> f86adb9 (project setup)
     height: 60px;
 }
 
@@ -2979,8 +3485,12 @@ ul.nav-tabs li.nav-item a.nav-link.active i {
     --dark: #191d21;
 }
 
+<<<<<<< HEAD
 body,
 html {
+=======
+body, html {
+>>>>>>> f86adb9 (project setup)
     min-height: 100%;
 }
 
@@ -3026,18 +3536,30 @@ a.bb {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .bullet,
 .slash {
+=======
+.bullet, .slash {
+>>>>>>> f86adb9 (project setup)
     display: inline;
     margin: 0 4px;
 }
 
 .bullet:after {
+<<<<<<< HEAD
     content: "\2022";
 }
 
 .slash:after {
     content: "/";
+=======
+    content: '\2022';
+}
+
+.slash:after {
+    content: '/';
+>>>>>>> f86adb9 (project setup)
 }
 
 .login-brand {
@@ -3079,17 +3601,25 @@ a.bb {
 }
 
 .gradient-bottom:after {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     bottom: 41px;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     background-image: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0.4),
         rgba(255, 255, 255, 0.8)
     );
+=======
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
+>>>>>>> f86adb9 (project setup)
     height: 60px;
 }
 
@@ -3135,9 +3665,15 @@ blockquote {
     background-color: #f9f9f9;
     border-radius: 3px;
     position: relative;
+<<<<<<< HEAD
     font-family: "Time new Romans";
     font-size: 16px;
     letter-spacing: 0.3px;
+=======
+    font-family: 'Time new Romans';
+    font-size: 16px;
+    letter-spacing: .3px;
+>>>>>>> f86adb9 (project setup)
 }
 
 blockquote:before {
@@ -3146,7 +3682,11 @@ blockquote:before {
     position: absolute;
     top: 10px;
     left: 20px;
+<<<<<<< HEAD
     opacity: 0.2;
+=======
+    opacity: .2;
+>>>>>>> f86adb9 (project setup)
 }
 
 blockquote .blockquote-footer {
@@ -3161,10 +3701,14 @@ blockquote .blockquote-footer {
     font-size: 15px;
 }
 
+<<<<<<< HEAD
 .fas,
 .far,
 .fab,
 .fal {
+=======
+.fas, .far, .fab, .fal {
+>>>>>>> f86adb9 (project setup)
     font-size: 13px;
 }
 
@@ -3278,7 +3822,11 @@ pre {
 }
 
 .beep:after {
+<<<<<<< HEAD
     content: "";
+=======
+    content: '';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     top: 2px;
     right: 8px;
@@ -3395,34 +3943,50 @@ pre {
 }
 
 .overlay-gradient-bottom:after {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: false;
+<<<<<<< HEAD
     background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 65%,
         rgba(0, 0, 0, 0.65) 100%
     );
+=======
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.65) 100%);
+>>>>>>> f86adb9 (project setup)
     z-index: 1;
 }
 
 .overlay-gradient-top:after {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: false;
+<<<<<<< HEAD
     background-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0) 65%,
         rgba(0, 0, 0, 0.65) 100%
     );
+=======
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.65) 100%);
+>>>>>>> f86adb9 (project setup)
     z-index: 1;
 }
 
@@ -3562,7 +4126,11 @@ pre {
 }
 
 .section .section-title:before {
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     border-radius: 5px;
     height: 8px;
     width: 30px;
@@ -3680,7 +4248,11 @@ pre {
 .navbar,
 .main-content,
 .main-footer {
+<<<<<<< HEAD
     transition: all 0.5s;
+=======
+    transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 body.sidebar-gone .main-sidebar {
@@ -3700,7 +4272,11 @@ body.sidebar-mini .main-sidebar {
 
 body.sidebar-mini .main-sidebar:after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+<<<<<<< HEAD
     content: " ";
+=======
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: fixed;
     background-color: #fff;
     width: 65px;
@@ -3760,11 +4336,15 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li > a {
     justify-content: center;
 }
 
+<<<<<<< HEAD
 body.sidebar-mini .main-sidebar .sidebar-menu > li > a .ion,
 body.sidebar-mini .main-sidebar .sidebar-menu > li > a .fas,
 body.sidebar-mini .main-sidebar .sidebar-menu > li > a .far,
 body.sidebar-mini .main-sidebar .sidebar-menu > li > a .fab,
 body.sidebar-mini .main-sidebar .sidebar-menu > li > a .fal {
+=======
+body.sidebar-mini .main-sidebar .sidebar-menu > li > a .ion, body.sidebar-mini .main-sidebar .sidebar-menu > li > a .fas, body.sidebar-mini .main-sidebar .sidebar-menu > li > a .far, body.sidebar-mini .main-sidebar .sidebar-menu > li > a .fab, body.sidebar-mini .main-sidebar .sidebar-menu > li > a .fal {
+>>>>>>> f86adb9 (project setup)
     margin: 0;
     font-size: 20px;
 }
@@ -3801,6 +4381,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
 }
 
+<<<<<<< HEAD
 body.sidebar-mini
     .main-sidebar
     .sidebar-menu
@@ -3822,6 +4403,11 @@ body.sidebar-mini
     ul.dropdown-menu
     li.active
     > a:hover {
+=======
+body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li > a:focus,
+body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a,
+body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a:hover {
+>>>>>>> f86adb9 (project setup)
     color: #fff;
     background-color: #6777ef !important;
 }
@@ -3832,6 +4418,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li a {
     background-color: #fff;
 }
 
+<<<<<<< HEAD
 body.sidebar-mini
     .main-sidebar
     .sidebar-menu
@@ -3841,19 +4428,29 @@ body.sidebar-mini
     a.has-dropdown:after {
     content: "";
     font-family: "Font Awesome 5 Free";
+=======
+body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li a.has-dropdown:after {
+    content: "";
+    font-family: 'Font Awesome 5 Free';
+>>>>>>> f86adb9 (project setup)
     font-weight: 900;
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translate(0, -50%);
     font-size: 12px;
+<<<<<<< HEAD
     transition: all 0.5s;
+=======
+    transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 body.sidebar-mini .main-sidebar .sidebar-menu li:hover > ul.dropdown-menu {
     display: block !important;
 }
 
+<<<<<<< HEAD
 body.sidebar-mini
     .main-sidebar
     .sidebar-menu
@@ -3871,6 +4468,13 @@ body.sidebar-mini
     > ul.dropdown-menu
     li
     .dropdown-menu {
+=======
+body.sidebar-mini .main-sidebar .sidebar-menu li:hover > ul.dropdown-menu li:hover > a {
+    background-color: #fcfcfd;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu li:hover > ul.dropdown-menu li .dropdown-menu {
+>>>>>>> f86adb9 (project setup)
     left: 200px;
     padding: 0;
 }
@@ -3879,8 +4483,12 @@ body.sidebar-mini .navbar {
     left: 65px;
 }
 
+<<<<<<< HEAD
 body.sidebar-mini .main-content,
 body.sidebar-mini .main-footer {
+=======
+body.sidebar-mini .main-content, body.sidebar-mini .main-footer {
+>>>>>>> f86adb9 (project setup)
     padding-left: 90px;
 }
 
@@ -3979,6 +4587,7 @@ body.layout-3 .navbar.navbar-secondary {
     z-index: 889;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -3992,10 +4601,18 @@ body.layout-3
     .navbar-nav
     > .nav-item.active
     > .nav-link:before {
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link {
+    color: #6777ef;
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link:before {
+>>>>>>> f86adb9 (project setup)
     left: 35px;
     right: 0;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -4009,13 +4626,24 @@ body.layout-3
     .navbar-nav
     > .nav-item:last-child
     .nav-link {
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item:first-child .nav-link {
+    margin-left: 0;
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item:last-child .nav-link {
+>>>>>>> f86adb9 (project setup)
     margin-right: 0;
 }
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link {
     color: #868e96;
     font-size: 13px;
+<<<<<<< HEAD
     letter-spacing: 0.3px;
+=======
+    letter-spacing: .3px;
+>>>>>>> f86adb9 (project setup)
     height: 70px;
     padding: 0;
     padding-left: 0 !important;
@@ -4025,6 +4653,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link {
     position: relative;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -4040,12 +4669,22 @@ body.layout-3
     > .nav-link.has-dropdown:after {
     content: "";
     font-family: "Font Awesome 5 Free";
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link.has-dropdown {
+    margin-right: 35px;
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link.has-dropdown:after {
+    content: "";
+    font-family: 'Font Awesome 5 Free';
+>>>>>>> f86adb9 (project setup)
     font-weight: 900;
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translate(0, -50%);
     font-size: 12px;
+<<<<<<< HEAD
     transition: all 0.5s;
     right: -20px;
 }
@@ -4056,12 +4695,21 @@ body.layout-3
     > .nav-item
     > .nav-link:before {
     content: " ";
+=======
+    transition: all .5s;
+    right: -20px;
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link:before {
+    content: ' ';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     left: initial;
     right: initial;
     bottom: 0;
     height: 2px;
     background-color: #6777ef;
+<<<<<<< HEAD
     transition: all 0.5s;
 }
 
@@ -4071,6 +4719,12 @@ body.layout-3
     > .nav-item
     > .nav-link
     span {
+=======
+    transition: all .5s;
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link span {
+>>>>>>> f86adb9 (project setup)
     line-height: 74px;
 }
 
@@ -4079,11 +4733,15 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link i {
     font-size: 16px;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
     > .nav-item
     > .nav-link:hover {
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link:hover {
+>>>>>>> f86adb9 (project setup)
     color: #191d21 !important;
 }
 
@@ -4091,6 +4749,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu {
     padding: 0;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -4101,11 +4760,18 @@ body.layout-3
     color: #6c757d;
     font-weight: 600;
     letter-spacing: 0.3px;
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link {
+    color: #6c757d;
+    font-weight: 600;
+    letter-spacing: .3px;
+>>>>>>> f86adb9 (project setup)
     padding: 7px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -4115,12 +4781,18 @@ body.layout-3
     .nav-link.has-dropdown:after {
     content: "";
     font-family: "Font Awesome 5 Free";
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link.has-dropdown:after {
+    content: "";
+    font-family: 'Font Awesome 5 Free';
+>>>>>>> f86adb9 (project setup)
     font-weight: 900;
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translate(0, -50%);
     font-size: 12px;
+<<<<<<< HEAD
     transition: all 0.5s;
     right: 15px;
 }
@@ -4132,10 +4804,18 @@ body.layout-3
     .dropdown-menu
     .nav-item:hover
     > .nav-link {
+=======
+    transition: all .5s;
+    right: 15px;
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item:hover > .nav-link {
+>>>>>>> f86adb9 (project setup)
     background-color: #fcfcfd;
     color: #191d21;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -4143,11 +4823,15 @@ body.layout-3
     .dropdown-menu
     .nav-item:hover
     > .dropdown-menu {
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item:hover > .dropdown-menu {
+>>>>>>> f86adb9 (project setup)
     display: block !important;
     top: -5px;
     left: 200px;
 }
 
+<<<<<<< HEAD
 body.layout-3
     .navbar.navbar-secondary
     .navbar-nav
@@ -4162,6 +4846,10 @@ body.layout-3
     .dropdown-menu
     .nav-item
     .nav-link:focus {
+=======
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item.active > .nav-link,
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link:focus {
+>>>>>>> f86adb9 (project setup)
     background-color: #6777ef;
     color: #fff;
 }
@@ -4243,7 +4931,11 @@ body.layout-3 .main-footer {
     height: 50px;
     padding: 0 20px;
     width: 100%;
+<<<<<<< HEAD
     letter-spacing: 0.3px;
+=======
+    letter-spacing: .3px;
+>>>>>>> f86adb9 (project setup)
     color: #78828a;
     text-decoration: none;
 }
@@ -4270,7 +4962,11 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li.active a {
+<<<<<<< HEAD
     color: maroon;
+=======
+    color: #6777ef;
+>>>>>>> f86adb9 (project setup)
     font-weight: 600;
     background-color: #f8fafb;
 }
@@ -4285,14 +4981,22 @@ body.layout-3 .main-footer {
 
 .main-sidebar .sidebar-menu li a.has-dropdown:after {
     content: "";
+<<<<<<< HEAD
     font-family: "Font Awesome 5 Free";
+=======
+    font-family: 'Font Awesome 5 Free';
+>>>>>>> f86adb9 (project setup)
     font-weight: 900;
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translate(0, -50%);
     font-size: 12px;
+<<<<<<< HEAD
     transition: all 0.5s;
+=======
+    transition: all .5s;
+>>>>>>> f86adb9 (project setup)
 }
 
 .main-sidebar .sidebar-menu li.active > ul.dropdown-menu li a:hover {
@@ -4372,6 +5076,7 @@ body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active a {
     color: #fff;
 }
 
+<<<<<<< HEAD
 body:not(.sidebar-mini)
     .sidebar-style-1
     .sidebar-menu
@@ -4389,10 +5094,18 @@ body:not(.sidebar-mini)
     ul.dropdown-menu
     li
     a:hover {
+=======
+body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a {
+    color: #e8ebfd;
+}
+
+body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a:hover {
+>>>>>>> f86adb9 (project setup)
     background-color: #6777ef;
     color: #fff;
 }
 
+<<<<<<< HEAD
 body:not(.sidebar-mini)
     .sidebar-style-1
     .sidebar-menu
@@ -4400,6 +5113,9 @@ body:not(.sidebar-mini)
     ul.dropdown-menu
     li.active
     a {
+=======
+body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li.active a {
+>>>>>>> f86adb9 (project setup)
     color: #fff;
 }
 
@@ -4410,7 +5126,11 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a {
 }
 
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
+<<<<<<< HEAD
     content: "";
+=======
+    content: '';
+>>>>>>> f86adb9 (project setup)
     position: absolute;
     left: 0;
     top: 50%;
@@ -4420,6 +5140,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
     background-color: #6777ef;
 }
 
+<<<<<<< HEAD
 body:not(.sidebar-mini)
     .sidebar-style-2
     .sidebar-menu
@@ -4427,6 +5148,9 @@ body:not(.sidebar-mini)
     ul.dropdown-menu
     li
     a {
+=======
+body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
+>>>>>>> f86adb9 (project setup)
     padding-left: 61px;
     background-color: #fff;
 }
@@ -4475,9 +5199,14 @@ body:not(.sidebar-mini)
         overflow: hidden;
     }
 
+<<<<<<< HEAD
     body.search-show:before,
     body.sidebar-show:before {
         content: "";
+=======
+    body.search-show:before, body.sidebar-show:before {
+        content: '';
+>>>>>>> f86adb9 (project setup)
         position: fixed;
         left: 0;
         right: 0;
@@ -4496,12 +5225,20 @@ body:not(.sidebar-mini)
 
     @-webkit-keyframes fadeinbackdrop {
         to {
+<<<<<<< HEAD
             opacity: 0.6;
+=======
+            opacity: .6;
+>>>>>>> f86adb9 (project setup)
         }
     }
     @keyframes fadeinbackdrop {
         to {
+<<<<<<< HEAD
             opacity: 0.6;
+=======
+            opacity: .6;
+>>>>>>> f86adb9 (project setup)
         }
     }
 }
@@ -4518,6 +5255,7 @@ body:not(.sidebar-mini)
 @-webkit-keyframes pulsate {
     0% {
         -webkit-transform: scale(0.1, 0.1);
+<<<<<<< HEAD
         opacity: 0;
     }
     50% {
@@ -4526,6 +5264,16 @@ body:not(.sidebar-mini)
     100% {
         -webkit-transform: scale(1.2, 1.2);
         opacity: 0;
+=======
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        opacity: 0.0;
+>>>>>>> f86adb9 (project setup)
     }
 }
 
@@ -4533,6 +5281,10 @@ body:not(.sidebar-mini)
     padding: 0px 4px !important;
     width: 25px;
     display: inline-block;
+<<<<<<< HEAD
+=======
+
+>>>>>>> f86adb9 (project setup)
 }
 
 @media screen and (max-width: 768px) {

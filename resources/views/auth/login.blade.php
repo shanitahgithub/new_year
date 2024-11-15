@@ -1,10 +1,18 @@
 @extends('layouts.auth_app')
 @section('title')
+<<<<<<< HEAD
     Login
 @endsection
 @section('content')
     <div class="card card-primary">
         <div class="card-header"><h4> Login</h4></div>
+=======
+    Admin Login
+@endsection
+@section('content')
+    <div class="card card-primary">
+        <div class="card-header"><h4>Admin Login</h4></div>
+>>>>>>> f86adb9 (project setup)
 
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
