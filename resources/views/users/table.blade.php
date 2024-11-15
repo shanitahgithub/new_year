@@ -8,7 +8,7 @@
                 <th>Phone Number</th>
                 <th>Image</th>
                 <th>Status</th>
-                <th>Phone Number Two</th>
+                <th>Gender</th>
                 <th>Role</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -33,7 +33,7 @@
                     @endif
                 </td>
 
-                <td>{{ $user->phone_number_two }}</td>
+                <td>{{ $user->gender }}</td>
                 <td>{{ $user->role->name }}</td>
                 <td class=" text-center">
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
