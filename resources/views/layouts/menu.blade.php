@@ -7,3 +7,7 @@
     <a href="{{ route('courses.index') }}"><i class="fa fa-edit"></i><span>@lang('models/courses.plural')</span></a>
 </li>
 
+<li class="side-menus {{ Request::is('programs*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('programs.index') }}"><i class="fas fa-building"></i><span>Programs</span></a>
+</li>
+

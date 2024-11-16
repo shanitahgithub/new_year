@@ -23,3 +23,6 @@ Auth::routes();
 
 
 Route::resource('courses', App\Http\Controllers\CourseController::class);
+
+
+Route::resource('programs', App\Http\Controllers\ProgramController::class);
