@@ -62,9 +62,11 @@ class UserController extends AppBaseController
      */
     public function store(CreateUserRequest $request)
     {
+
+       // dd($request->all());
+     
         
           $user = new User();
-
 
           //store user basic data
           $user->first_name = ucwords($request->input('first_name'));
@@ -73,7 +75,7 @@ class UserController extends AppBaseController
           $user->phone_number = $request->input('phone_number');
           $user->phone_number_two = $request->input('phone_number_two');
           $user->gender = $request->gender;
-          $user->role_id= $request->type_id;
+          $user->role_id= $request->role_id;
           $user->status= "active";
           $password = "12345678";
 
@@ -81,18 +83,22 @@ class UserController extends AppBaseController
           $user->password = Hash::make($password);
 
           //store user image if uploaded
-          if(!empty($request->file('avatar'))){
-            $user->avatar = \App\Models\ImageUploader::upload($request->file('avatar'),'users');
+          if(!empty($request->file('image'))){
+            $user->image = \App\Models\ImageUploader::upload($request->file('image'),'users');
           }else{
-            $user->avatar =  "user.png";
+            $user->image =  "user.jpg";
 
           }
 
+          $user->save();
 
 
-        Flash::success('User saved successfully.');
+          $name = ucwords($request->last_name ." " . $request->first_name);
+          $useRole = Role::find($request->role_id);
 
-        return redirect(route('users.index'));
+          session()->flash($name.' has been added successfully as a '.$useRole);
+
+          return redirect(route('users.index'));
     }
 
     /**

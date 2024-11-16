@@ -74,7 +74,7 @@ class User extends Authenticatable
         'last_name' => 'required|string|min:3|max:200',
         'email' => 'required|string|email|unique:users,email',
         'phone_number' => 'required|min:10|max:10|unique:users,phone_number',
-        'password' => 'required|string|min:8|max:10',
+        'password' => 'nullable|string|min:8|max:10',
         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         'status' => 'nullable|string',
         'phone_number_two' => 'nullable|string|min:10|max:10|unique:users,phone_number_two',

@@ -2,11 +2,11 @@
     <table class="table" id="users-table">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Image</th>
                 <th>Status</th>
                 <th>Gender</th>
                 <th>Role</th>
@@ -16,11 +16,15 @@
         <tbody>
             @foreach($users as $user)
             <tr>
+                <td>
+                    <img src="{{ $user->image ? asset('storage/' . $user->image) : asset('assets/images/user.jpg') }}" alt="User Image" width="60" height="60">
+                </td>
                 <td>{{ $user->first_name }}</td>
                 <td>{{ $user->last_name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone_number }}</td>
-                <td>{{ $user->image }}</td>
+
+
                 <td>
                     @if ($user->status == 'active')
                     <span class="badge badge-success">{{ $user->status }}</span>
