@@ -9,7 +9,7 @@
         <th>@lang('models/settings.fields.address')</th>
         <th>@lang('models/settings.fields.contact_one')</th>
         <th>@lang('models/settings.fields.contact_two')</th>
-                <th colspan="3">@lang('crud.action')</th>
+                <th colspan="3">Action</th>
             </tr>
         </thead>
         <tbody>

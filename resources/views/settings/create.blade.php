@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('title')
-    @lang('crud.add_new') @lang('models/settings.singular')
+    @lang('crud.add_new') Settings
 @endsection
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading m-0">@lang('crud.add_new') @lang('models/settings.singular')</h3>
+            <h3 class="page__heading m-0">Add New Setting</h3>
             <div class="filter-container section-header-breadcrumb row justify-content-md-end">
                 <a href="{{ route('settings.index') }}" class="btn btn-primary">@lang('crud.back')</a>
             </div>
