@@ -22,11 +22,13 @@
     {!! Form::number('credit_required', null, ['class' => 'form-control','min' => 3,'max' => 10]) !!}
 </div>
 
-<!-- Created By Field -->
+<!-- Status Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('created_by', 'Created By:') !!}
-    {!! Form::text('created_by', null, ['class' => 'form-control']) !!}
+    {!! Form::label('status', 'Status:') !!}
+    {!! Form::select('status', ['active' => 'Active', 'inactive' => 'Inactive'], 'active', ['class' => 'form-control']) !!}
 </div>
+
+
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

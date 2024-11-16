@@ -9,6 +9,8 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProgramController extends AppBaseController
 {
@@ -55,6 +57,9 @@ class ProgramController extends AppBaseController
     public function store(CreateProgramRequest $request)
     {
         $input = $request->all();
+
+        // Add the currently logged-in user's ID to the input array
+         $input['created_by'] = Auth::id();
 
         $program = $this->programRepository->create($input);
 

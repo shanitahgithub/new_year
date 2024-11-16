@@ -61,9 +61,16 @@ class Program extends Model
         'duration' => 'required|string|max:20',
         'status' => 'required|string',
         'program_code' => 'nullable|string',
-        'credit_required' => 'required|min:3|max:10',
+        'credit_required' => 'required|integer|min:3|max:10|',
         'created_by' => 'nullable'
     ];
 
+     /**
+     * Get the user that created the program.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
     
 }
