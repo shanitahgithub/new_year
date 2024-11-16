@@ -12,10 +12,10 @@
         "inView": false
     },
     {
-        "name": "course_name",
+        "name": "first_name",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "required|string|max:255",
+        "validations": "required|string|min:3|max:100",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -24,10 +24,10 @@
         "inView": true
     },
     {
-        "name": "programme_type",
+        "name": "last_name",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "required|string|max:100",
+        "validations": "required|string|min:3|max:200",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -36,10 +36,22 @@
         "inView": true
     },
     {
-        "name": "duration",
-        "dbType": "integer",
+        "name": "email",
+        "dbType": "string",
+        "htmlType": "email",
+        "validations": "required|string|email",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "phone_number",
+        "dbType": "string",
         "htmlType": "number",
-        "validations": "required|string|regex:\/^\\d+ (year|month)s?$\/",
+        "validations": "required|min:10|max:10",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -48,10 +60,10 @@
         "inView": true
     },
     {
-        "name": "core_courses",
+        "name": "password",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "nullable|string|255",
+        "validations": "required|string|min:8|max:10",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -60,9 +72,21 @@
         "inView": true
     },
     {
-        "name": "course_units",
+        "name": "image",
         "dbType": "string",
-        "htmlType": "text",
+        "htmlType": "file",
+        "validations": "nullable|image|mimes:jpeg,png,jpg|max:2048",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "status",
+        "dbType": "string",
+        "htmlType": "select:active,inactive",
         "validations": "nullable|string",
         "searchable": true,
         "fillable": true,
@@ -72,22 +96,10 @@
         "inView": true
     },
     {
-        "name": "admission_requirements",
+        "name": "phone_number_two",
         "dbType": "string",
-        "htmlType": "text",
-        "validations": "required|string|max:255",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "inView": true
-    },
-    {
-        "name": "fees",
-        "dbType": "integer",
         "htmlType": "number",
-        "validations": "required|numeric|min:0",
+        "validations": "nullable|string|min:10|max:10|unique:users,phone_number_two",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -96,22 +108,10 @@
         "inView": true
     },
     {
-        "name": "category",
-        "dbType": "string",
+        "name": "role_id",
+        "dbType": "integer:unsigned:foreign,roles,id",
         "htmlType": "text",
-        "validations": "required|string|max:50",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "inView": true
-    },
-    {
-        "name": "credit_units",
-        "dbType": "integer",
-        "htmlType": "number",
-        "validations": "",
+        "validations": "required|integer",
         "searchable": true,
         "fillable": true,
         "primary": false,

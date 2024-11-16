@@ -37,6 +37,28 @@
         </div>
         <!-- Main Content -->
         <div class="main-content">
+            <!--flash messages-->
+            <!-- Check for success flash message -->
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<!-- Check for error flash message -->
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
+<!-- Check for info flash message -->
+@if(session('info'))
+    <div class="alert alert-info">
+        {{ session('info') }}
+    </div>
+@endif
+
             @yield('content')
         </div>
         <footer class="main-footer">
