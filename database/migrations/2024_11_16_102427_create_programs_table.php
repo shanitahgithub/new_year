@@ -16,14 +16,15 @@ class CreateProgramsTable extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('duration');
-            $table->string('status');
-            $table->string('program_code');
-            $table->integer('credit_required');
-            $table->integer('created_by')->unsigned();
+            $table->string('status')->default("active");
+            $table->string('program_code')->nullable();
+            $table->integer('credit_required')->default(3);
+            $table->foreignId('created_by')->nullable()->constrained("users")->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
-            $table->foreign('created_by')->references('id')->on('users');
+
+           
         });
     }
 
