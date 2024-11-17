@@ -1,10 +1,14 @@
 @extends('layouts.auth_app')
 @section('title')
-    Login
+    Admin Login
 @endsection
 @section('content')
     <div class="card card-primary">
+<<<<<<< HEAD
         <div class="card-header"><h4> Login Into your Account </h4></div>
+=======
+        <div class="card-header"><h4>Admin Login</h4></div>
+>>>>>>> 97c953a1b2ae0cf56cf6411e785d6894170fc761
 
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">

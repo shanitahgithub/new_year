@@ -6,6 +6,7 @@ use Eloquent as Model;
 use Spatie\Permission\Traits\HasRoles; 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Models\Role;
 
 /**
  * Class User
@@ -41,7 +42,8 @@ class User extends Authenticatable
         'image',
         'status',
         'phone_number_two',
-        'role_id'
+        'role_id',
+        'gender'
     ];
 
     /**
@@ -58,7 +60,8 @@ class User extends Authenticatable
         'image' => 'string',
         'status' => 'string',
         'phone_number_two' => 'string',
-        'role_id' => 'integer'
+        'role_id' => 'integer',
+        'gender'=>'string'
     ];
 
     /**
@@ -71,12 +74,19 @@ class User extends Authenticatable
         'last_name' => 'required|string|min:3|max:200',
         'email' => 'required|string|email|unique:users,email',
         'phone_number' => 'required|min:10|max:10|unique:users,phone_number',
-        'password' => 'required|string|min:8|max:10',
+        'password' => 'nullable|string|min:8|max:10',
         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         'status' => 'nullable|string',
         'phone_number_two' => 'nullable|string|min:10|max:10|unique:users,phone_number_two',
-        'role_id' => 'required|integer'
+        'role_id' => 'required|integer',
+        'gender' => 'nullable|string',
     ];
 
     
+
+    // Define relationship with Role model
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

@@ -6,9 +6,13 @@ use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Hash;
 use Response;
+use Spatie\Permission\Models\Role;
+
 
 class UserController extends AppBaseController
 {
@@ -42,7 +46,11 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+
+        $roles = Role::pluck('name', 'id')->toArray();
+
+
+        return view('users.create',compact('roles'));
     }
 
     /**
@@ -54,13 +62,43 @@ class UserController extends AppBaseController
      */
     public function store(CreateUserRequest $request)
     {
-        $input = $request->all();
 
-        $user = $this->userRepository->create($input);
+       // dd($request->all());
+     
+        
+          $user = new User();
 
-        Flash::success('User saved successfully.');
+          //store user basic data
+          $user->first_name = ucwords($request->input('first_name'));
+          $user->last_name =ucwords( $request->input('last_name'));
+          $user->email = $request->input('email');
+          $user->phone_number = $request->input('phone_number');
+          $user->phone_number_two = $request->input('phone_number_two');
+          $user->gender = $request->gender;
+          $user->role_id= $request->role_id;
+          $user->status= "active";
+          $password = "12345678";
 
-        return redirect(route('users.index'));
+          //has user password for data encryption
+          $user->password = Hash::make($password);
+
+          //store user image if uploaded
+          if(!empty($request->file('image'))){
+            $user->image = \App\Models\ImageUploader::upload($request->file('image'),'users');
+          }else{
+            $user->image =  "user.jpg";
+
+          }
+
+          $user->save();
+
+
+          $name = ucwords($request->last_name ." " . $request->first_name);
+          $useRole = Role::find($request->role_id);
+
+          session()->flash($name.' has been added successfully as a '.$useRole);
+
+          return redirect(route('users.index'));
     }
 
     /**
