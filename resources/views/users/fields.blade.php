@@ -1,6 +1,6 @@
 <?php
-
-
+use Spatie\Permission\Models\Role;
+$roles = Role::pluck('name', 'id')->toArray();
 ?>
 
 <!-- First Name Field -->
