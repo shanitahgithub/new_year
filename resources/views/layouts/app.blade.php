@@ -34,6 +34,7 @@
         </nav>
         <div class="main-sidebar main-sidebar-postion">
             @include('layouts.sidebar')
+            
         </div>
         <!-- Main Content -->
         <div class="main-content">
