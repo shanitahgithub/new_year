@@ -15,3 +15,7 @@
     <a class="nav-link" href="{{ route('programs.index') }}"><i class="fas fa-building"></i><span>Programs</span></a>
 </li>
 
+<li class="side-menus {{ Request::is('semesters*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('semesters.index') }}"><i class="fas fa-building"></i><span>Semesters</span></a>
+</li>
+

@@ -27,3 +27,6 @@ Route::resource('settings', App\Http\Controllers\SettingController::class);
 
 
 Route::resource('users', App\Http\Controllers\UserController::class);
+
+
+Route::resource('semesters', App\Http\Controllers\SemesterController::class);

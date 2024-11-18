@@ -2364,7 +2364,7 @@ h6 .badge {
     left: 0;
     width: 100%;
     height: 115px;
-    background-color: maroon;
+    background-color: #6777ef;
     z-index: -1;
 }
 
@@ -3173,7 +3173,7 @@ blockquote .blockquote-footer {
 .fab,
 .fal {
     font-size: 13px;
-    color: maroon;
+    color: white;
 }
 
 #visitorMap {
@@ -4278,7 +4278,7 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li.active a {
-    color: maroon;
+    color: #6777ef;
     font-weight: 600;
     background-color: #f8fafb;
 }
@@ -4559,4 +4559,5 @@ body:not(.sidebar-mini)
 }
 .mb-3 h5 {
     font-weight: bold;
+    
 }

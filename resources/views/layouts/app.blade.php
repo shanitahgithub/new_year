@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}">
     <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.css" rel="stylesheet" />
+    <!-- Your App CSS -->
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @routes
 @yield('page_css')
 <!-- Template CSS -->
@@ -79,6 +82,10 @@
 <script src="{{ asset('assets/js/iziToast.min.js') }}"></script>
 <script src="{{ asset('assets/js/select2.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js"></script>
+    <!-- Your App JS -->
+<script src="{{ mix('js/app.js') }}"></script>
 
 <!-- Template JS File -->
 <script src="{{ asset('web/js/stisla.js') }}"></script>
