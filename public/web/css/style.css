@@ -93,7 +93,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 .bg-info {
-    background-color: #3abaf4 !important;
+    background-color: maroon !important;
 }
 
 .bg-warning {
@@ -2013,8 +2013,8 @@ h6 .badge {
 .btn-info,
 .btn-info.disabled {
     box-shadow: 0 2px 6px #82d3f8;
-    background-color: #3abaf4;
-    border-color: #3abaf4;
+    background-color: maroon;
+    border-color: maroon;
     color: #fff;
 }
 
@@ -2165,7 +2165,7 @@ h6 .badge {
     margin-bottom: 5px;
     font-weight: 600;
     font-size: 15px;
-    color: #34395e;
+    color: maroon;
 }
 
 .media .media-title a {
@@ -2275,7 +2275,7 @@ h6 .badge {
 
 .accordion .accordion-header[aria-expanded="true"] {
     box-shadow: 0 2px 6px #acb5f6;
-    background-color: #6777ef;
+    background-color: maroon;
     color: #fff;
 }
 
@@ -2996,7 +2996,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     font-family: "Nunito", "Segoe UI", arial;
-    color: #6c757d;
+    color: black;
 }
 
 a.bb {
@@ -3940,7 +3940,7 @@ body.layout-2 .main-sidebar .sidebar-menu li a.has-dropdown:after {
 }
 
 body.layout-2 .main-sidebar .sidebar-menu li a:hover {
-    color: #6777ef;
+    color: maroon;
     background-color: transparent;
 }
 
@@ -3992,7 +3992,7 @@ body.layout-3
     .navbar-nav
     > .nav-item.active
     > .nav-link {
-    color: #6777ef;
+    color: maroon;
 }
 
 body.layout-3

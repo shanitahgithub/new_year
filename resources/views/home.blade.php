@@ -674,26 +674,36 @@
             <!-- Notice Board and Events Calendar -->
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="card p-4" style="border: 2px solid #800000;">
-                        <h5 style="color: #800000;">Notice Board</h5>
+                    <div class="card p-4" style="border: 2px solid #b49b5c;">
+                        <h5 style="color: black;">Notice Board</h5>
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <strong>School annual sports day</strong><br>
-                                <span>20 July, 2023</span>
+                                <span>20 July, 2025</span>
                                 <span class="float-right">20k views</span>
                             </li>
                             <li class="list-group-item">
-                                <strong>Annual function celebration</strong><br>
-                                <span>05 July, 2023</span>
+                                <strong>Women's Empowerment</strong><br>
+                                <span>10 July, 2025</span>
+                                <span class="float-right">15k views</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>30 days of coding challenge festival</strong><br>
+                                <span>05 July, 2025</span>
+                                <span class="float-right">15k views</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Thank God Its a Friday</strong><br>
+                                <span>05 July, 2025</span>
                                 <span class="float-right">15k views</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="card p-4" style="border: 2px solid #800000;">
-                        <h5 style="color: #800000;">Events Calendar</h5>
+                 <div class="col-lg-4">
+                    <div class="card p-4" style="border: 2px solid white;">
+                        <h5 style="color: black ">Events Calendar</h5>
                         <div id="eventsCalendar"></div>
                     </div>
                 </div>
@@ -766,4 +776,5 @@
             calendar.render();
         });
     </script>
-@endsection
+@endsection 
+

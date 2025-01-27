@@ -89,14 +89,16 @@ class UserController extends AppBaseController
             $user->image =  "user.jpg";
 
           }
+          
 
           $user->save();
 
 
           $name = ucwords($request->last_name ." " . $request->first_name);
           $useRole = Role::find($request->role_id);
+          session()->flash('success', $name . ' has been added successfully as a ' . $useRole->name);
 
-          session()->flash($name.' has been added successfully as a '.$useRole);
+        //   session()->flash($name.' has been added successfully as a '.$useRole);
 
           return redirect(route('users.index'));
     }
