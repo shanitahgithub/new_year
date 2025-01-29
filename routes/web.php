@@ -30,3 +30,11 @@ Route::resource('users', App\Http\Controllers\UserController::class);
 
 
 Route::resource('semesters', App\Http\Controllers\SemesterController::class);
+
+
+Route::resource('cohorts', App\Http\Controllers\CohortsController::class);
+
+
+Route::get('/course-units', [App\Http\Controllers\CourseUnitController::class, 'index'])->name('course-units.index');
+
+Route::resource('course-units', App\Http\Controllers\CourseUnitController::class);

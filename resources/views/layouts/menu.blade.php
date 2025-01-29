@@ -19,3 +19,7 @@
     <a class="nav-link" href="{{ route('semesters.index') }}"><i class="fas fa-building"></i><span>Semesters</span></a>
 </li>
 
+<li class="side-menus {{ Request::is('cohorts*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('cohorts.index') }}"><i class="fas fa-building"></i><span>Cohorts</span></a>
+</li>
+
