@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
+
 class RolesAndPermissionsSeeder extends Seeder
 {
     /**
@@ -22,6 +23,7 @@ class RolesAndPermissionsSeeder extends Seeder
          // Create roles and assign permissions
          $adminRole = Role::create(['name' => 'admin']);
          $studentRole = Role::create(['name' => 'student']);
+        
  
          // Assign permissions to admin role
          $adminRole->givePermissionTo([$viewDashboard, $manageUsers]);
@@ -30,3 +32,5 @@ class RolesAndPermissionsSeeder extends Seeder
          $studentRole->givePermissionTo($viewDashboard);
     }
 }
+
+

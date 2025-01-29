@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\CohortsDataTable;
+ // Add this line at the top of your controller
+
+use App\Models\Cohorts;
+
 use App\Http\Requests;
 use App\Http\Requests\CreateCohortsRequest;
 use App\Http\Requests\UpdateCohortsRequest;
@@ -27,10 +31,15 @@ class CohortsController extends AppBaseController
      * @param CohortsDataTable $cohortsDataTable
      * @return Response
      */
-    public function index(CohortsDataTable $cohortsDataTable)
-    {
-        return $cohortsDataTable->render('cohorts.index');
-    }
+    // public function index(CohortsDataTable $cohortsDataTable)
+    // {
+    //     return $cohortsDataTable->render('cohorts.index');
+    // }
+    public function index()
+{
+    $cohorts = Cohorts::all(); // Fetch all cohorts from database
+    return view('cohorts.index', compact('cohorts')); // Pass it to the view
+}
 
     /**
      * Show the form for creating a new Cohorts.
@@ -80,6 +89,8 @@ class CohortsController extends AppBaseController
         return view('cohorts.show')->with('cohorts', $cohorts);
     }
 
+    
+
     /**
      * Show the form for editing the specified Cohorts.
      *
@@ -96,6 +107,8 @@ class CohortsController extends AppBaseController
 
             return redirect(route('cohorts.index'));
         }
+
+    
 
         return view('cohorts.edit')->with('cohorts', $cohorts);
     }

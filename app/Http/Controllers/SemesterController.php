@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Semester;
 use App\DataTables\SemesterDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateSemesterRequest;
@@ -12,6 +13,8 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Support\Facades\Auth;
 use Response;
 
+
+
 class SemesterController extends AppBaseController
 {
     /** @var  SemesterRepository */
@@ -21,17 +24,25 @@ class SemesterController extends AppBaseController
     {
         $this->semesterRepository = $semesterRepo;
     }
-
+   
     /**
      * Display a listing of the Semester.
      *
      * @param SemesterDataTable $semesterDataTable
      * @return Response
      */
-    public function index(SemesterDataTable $semesterDataTable)
+    // public function index(SemesterDataTable $semesterDataTable)
+    // {
+    //     return $semesterDataTable->render('semesters.index');
+    // }
+
+    public function index()
     {
-        return $semesterDataTable->render('semesters.index');
+        $semesters = Semester::all(); // Fetch all semesters from the database
+        return view('semesters.index', compact('semesters')); // Pass data to view
     }
+
+
 
     /**
      * Show the form for creating a new Semester.

@@ -38,3 +38,8 @@ Route::resource('cohorts', App\Http\Controllers\CohortsController::class);
 Route::get('/course-units', [App\Http\Controllers\CourseUnitController::class, 'index'])->name('course-units.index');
 
 Route::resource('course-units', App\Http\Controllers\CourseUnitController::class);
+
+Route::resource('lecturers', App\Http\Controllers\LecturerController::class);
+
+Route::get('lecturers', [App\Http\Controllers\LecturerController::class, 'index'])->name('lecturers.index');
+

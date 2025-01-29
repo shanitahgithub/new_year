@@ -23,6 +23,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-md-4 mb-3">
                             <a href="{{ route('course-units.index') }}">
                             <div class="card text-center shadow-sm">
@@ -33,24 +34,38 @@
                             </div>
                         </a>
                         </div>
+
                         <div class="col-md-4 mb-3">
+                            <a href="{{ route('users.index') }}">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
                                     <i class="fas fa-user-graduate fa-2x"></i>
                                     <h6 class="cards">Students</h6>
                                 </div>
                             </div>
+                            <a>
                         </div>
 
                         <!-- Second Row of Cards -->
+
                         <div class="col-md-4 mb-3">
+                            <a href="{{ route('lecturers.index') }}">
+                            <div class="card text-center shadow-sm">
+                                <div class="card-body">
+                                    <i class="fas fa-book fa-2x"></i>
+                                    <h6 class="cards">Lecturers</h6>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                        {{-- <div class="col-md-4 mb-3">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
                                     <i class="fas fa-chalkboard-teacher fa-2x"></i>
                                     <h6 class="cards">Lecturers</h6>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-4 mb-3">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
