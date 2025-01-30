@@ -1,3 +1,4 @@
+
 {{-- @extends('layouts.app')
 @section('title')
     @lang('crud.edit') @lang('models/courses.singular')

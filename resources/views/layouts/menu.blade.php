@@ -23,3 +23,13 @@
     <a class="nav-link" href="{{ route('cohorts.index') }}"><i class="fas fa-building"></i><span>Cohorts</span></a>
 </li>
 
+<li class="side-menus {{ Request::is('semesters*') ? 'active' : '' }}">
+    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+        <i class="fas fa-building"></i><span>Semesters</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="{{ route('semesters.index') }}">All Semesters</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="{{ route('cohorts.index') }}">Cohorts</a></li>
+    </ul>
+</li>
