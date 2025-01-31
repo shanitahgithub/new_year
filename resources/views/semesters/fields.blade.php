@@ -1,3 +1,4 @@
+{{-- Puts the dropdowns and fetches the programs --}}
 <?php
 use App\Models\Program;
 $programs =  Program::pluck('name', 'id') ;

@@ -117,6 +117,12 @@
     </a>
 </li>
 
+<li class="side-menus {{ Request::is('student_applications*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('student_applications.index') }}">
+        <i class="fa fa-graduation-cap"></i><span>Student Application</span>
+    </a>
+</li>
+
 <!-- Course Units Dropdown -->
 {{-- <li class="nav-item dropdown side-menus {{ Request::is('course-units*') ? 'active' : '' }}">
     <a class="nav-link dropdown-toggle" href="#" id="courseUnitsDropdown" role="button" data-toggle="dropdown"

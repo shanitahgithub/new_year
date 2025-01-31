@@ -43,3 +43,10 @@ Route::resource('lecturers', App\Http\Controllers\LecturerController::class);
 
 Route::get('lecturers', [App\Http\Controllers\LecturerController::class, 'index'])->name('lecturers.index');
 
+use App\Http\Controllers\StudentController;
+
+Route::resource('students', StudentController::class);
+use App\Http\Controllers\StudentApplicationController;
+
+Route::resource('student_applications', StudentApplicationController::class);
+Route::get('/student_applications', [StudentApplicationController::class, 'index'])->name('student_applications.index');
