@@ -1,10 +1,8 @@
-
-
-
 <?php
-
- $programs = App\Models\Program::where('status', 'active')->pluck('name', 'id');
+use App\Models\Program;
+$programs =  Program::pluck('name', 'id') ;
 ?>
+
 
 <!-- Name Field -->
 <div class="form-group col-sm-6">
@@ -19,13 +17,13 @@
 </div>
 
 @push('scripts')
-    <script type="text/javascript">
-        $('#start_date').datetimepicker({
+<script type="text/javascript">
+    $('#start_date').datetimepicker({
             format: 'DD/MM/YY',  // Changed to show month, day, and year only
-            useCurrent: true,
+            useCurrent: false,
             sideBySide: true
         });
-    </script>
+</script>
 @endpush
 
 
@@ -36,21 +34,26 @@
 </div>
 
 @push('scripts')
-    <script type="text/javascript">
-        $('#end_date').datetimepicker({
+<script type="text/javascript">
+    $('#end_date').datetimepicker({
             format: 'DD/MM/YY',  // Changed to show month, day, and year only
-            useCurrent: true,
+            useCurrent: false,
             sideBySide: true
         });
-    </script>
+</script>
 @endpush
 
 <!-- Program Id Field -->
 
 <div class="form-group col-sm-6">
-    {!! Form::label('program_id', 'Program:') !!}
-    {!! Form::select('program_id', $programs, null, ['class' => 'form-control']) !!}
+    {!! Form::label('program', 'Program:') !!}
+    {!! Form::select('program', $programs, null, ['class' => 'form-control']) !!}
 
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('status', 'Status:') !!}
+    {!! Form::select('status', ['Active' => 'Active', 'Inactive' => 'Inactive'], null, ['class' => 'form-control']) !!}
 </div>
 
 

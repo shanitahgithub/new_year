@@ -21,7 +21,7 @@ class CreateSemestersTable extends Migration
             $table->string('start_date');
             $table->string('end_date');
             $table->foreignId('created_by')->nullable()->constrained("users")->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreignId('program_id')->nullable()->constrained("programs")->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreignId('program')->nullable()->constrained("programs")->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
             
         });

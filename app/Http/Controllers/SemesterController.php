@@ -31,16 +31,26 @@ class SemesterController extends AppBaseController
      * @param SemesterDataTable $semesterDataTable
      * @return Response
      */
-    // public function index(SemesterDataTable $semesterDataTable)
+    
+
+    // public function index()
     // {
-    //     return $semesterDataTable->render('semesters.index');
+    //     $semesters = Semester::all(); // Fetch all semesters from the database
+    //     return view('semesters.index', compact('semesters')); // Pass data to view
     // }
+    
 
     public function index()
-    {
-        $semesters = Semester::all(); // Fetch all semesters from the database
-        return view('semesters.index', compact('semesters')); // Pass data to view
-    }
+{
+    // Eager load the 'user' relationship to avoid N+1 query problem
+    $semesters = Semester::with('user')->get(); 
+
+    return view('semesters.index', compact('semesters'));
+
+    
+}
+
+
 
 
 

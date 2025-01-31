@@ -1,5 +1,3 @@
-
-
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
@@ -32,8 +30,9 @@
 
 <!-- Program Id Field -->
 <div class="form-group">
-    {!! Form::label('program_id', 'Program Id:') !!}
-    <p>{{ $semester->program_id }}</p>
+    {!! Form::label('program', 'Program :') !!}
+    <p>{{ $semester->program }}</p>
+
 </div>
 
 <!-- Created At Field -->
@@ -47,4 +46,3 @@
     {!! Form::label('updated_at', 'Updated At:') !!}
     <p>{{ $semester->updated_at }}</p>
 </div>
-

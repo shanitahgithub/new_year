@@ -34,7 +34,7 @@ class Semester extends Model
         'start_date',
         'end_date',
         'created_by',
-        'program_id'
+        'program'
     ];
 
     /**
@@ -48,8 +48,10 @@ class Semester extends Model
         'start_date' => 'date',
         'end_date' => 'date',
         'created_by' => 'integer',
-        'program_id' => 'integer'
+        'program' => 'string',
     ];
+   
+    
 
     /**
      * Validation rules
@@ -58,12 +60,25 @@ class Semester extends Model
      */
     public static $rules = [
         'name' => 'required|min:3|max:100|unique:semesters,name' ,
-        'status' => 'required string',
+        'status' => 'required|string',
         'start_date' => 'nullable',
         'end_date' => 'required',
         'created_by' => 'nullable',
-        'program_id' => 'required|integer'
+        'program' => 'required|string'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+    
+    public function program()
+{
+    return $this->belongsTo(Program::class, 'program');
+}
+
+    
+    
 
     
 }
