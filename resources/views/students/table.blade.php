@@ -63,7 +63,20 @@
             <td>{{ $student->user->name }}</td>
             <td>{{ $student->reg_number }}</td>
             <td>{{ \Carbon\Carbon::parse($student->admission_date)->format('d M Y') }}</td>
-            <td>{{ ucfirst($student->status) }}</td>
+            {{-- <td>{{ ucfirst($student->status) }}</td> --}}
+            <td>
+                @if ($student->status == 'dropped')
+                <span class="badge badge-success">{{ $student->status }}</span>
+                @elseif ($student->status == 'graduated')
+                <span class="badge badge-danger">{{ $student->status }}</span>
+                @elseif ($student->status == 'active')
+                <span class="badge badge-warning">{{ $student->status }}</span>
+                @else
+                <span class="badge badge-secondary">{{ $student->status }}</span>
+                @endif
+            </td>
+
+
             <td>{{ $student->cohort->name }}</td>
             {{-- <td>{{ $student->creator->first_name }}</td> --}}
             <td>{{ Auth::user()->first_name }}</td>
