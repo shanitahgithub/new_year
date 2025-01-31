@@ -142,11 +142,13 @@
             <label for="interview_result">Interview Result:</label>
             <select name="interview_result" id="interview_result" class="form-control" required>
                 <option value="pending" {{ old('interview_result')=='pending' ? 'selected' : '' }}>Pending</option>
-                <option value="passed" {{ old('interview_result')=='passed' ? 'selected' : '' }}>Passed</option>
-                <option value="failed" {{ old('interview_result')=='failed' ? 'selected' : '' }}>Failed</option>
+                <option value="passed" {{ old('interview_result')=='approved' ? 'selected' : '' }}>Passed</option>
+                <option value="failed" {{ old('interview_result')=='rejected' ? 'selected' : '' }}>Failed</option>
             </select>
             @error('interview_result')<div class="text-danger">{{ $message }}</div>@enderror
         </div>
+
+
 
         <div class="form-group">
             <label for="submitted_documents">Submitted Documents (JSON format):</label>
@@ -186,4 +188,6 @@
         <button type="submit" class="btn btn-success">Create Application</button>
     </form>
 </div>
+
+
 @endsection

@@ -65,8 +65,12 @@
             <td>{{ \Carbon\Carbon::parse($student->admission_date)->format('d M Y') }}</td>
             <td>{{ ucfirst($student->status) }}</td>
             <td>{{ $student->cohort->name }}</td>
-            <td>{{ $student->creator->name }}</td>
+            {{-- <td>{{ $student->creator->first_name }}</td> --}}
+            <td>{{ Auth::user()->first_name }}</td>
+
+
             <td>{{ $student->student_application_id }}</td>
+
         </tr>
         @endforeach
     </tbody>

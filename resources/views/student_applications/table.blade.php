@@ -4,11 +4,11 @@
 <div class="container">
     <h1>Student Applications</h1>
 
-    @if (session('success'))
+    {{-- @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-    @endif
+    @endif --}}
 
     <a href="{{ route('student_applications.create') }}" class="btn btn-primary mb-3">Create New Application</a>
 
@@ -39,10 +39,25 @@
                 @foreach ($applications as $application)
                 <tr>
                     <td>{{ $application->id }}</td>
-                    <td>{{ $application->user->first_name }}</td>
+                    <td>{{ $application->user->first_name }} {{ $application->user->last_name }}</td>
                     <td>{{ $application->date_of_birth }}</td>
                     <td>{{ $application->address }}</td>
-                    <td>{{ ucfirst($application->status) }}</td>
+                    <td>
+                        @if ($application->status == 'approved')
+                        <span class="badge badge-success">{{ $application->status }}</span>
+                        @elseif ($application->status == 'rejected')
+                        <span class="badge badge-danger">{{ $application->status }}</span>
+                        @elseif ($application->status == 'pending')
+                        <span class="badge badge-warning">{{ $application->status }}</span>
+                        @else
+                        <span class="badge badge-secondary">{{ $application->status }}</span>
+                        @endif
+                    </td>
+
+
+
+
+                    {{-- <td>{{ ucfirst($application->status) }}</td> --}}
                     <td>{{ $application->program->name }}</td>
                     <td>{{ $application->points_scored }}</td>
                     <td>{{ $application->secondary_school }}</td>

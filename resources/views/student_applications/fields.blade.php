@@ -1,6 +1,6 @@
 <?php
 use App\Models\User;
-$users = User::pluck('first_name', 'id');
+$users = User::pluck('first_name', 'last_name','id');
 ?>
 
 
