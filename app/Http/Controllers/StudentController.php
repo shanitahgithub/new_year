@@ -48,6 +48,12 @@ class StudentController extends Controller
         // Use the repository to create the student
         $this->studentsRepository->create($input);
 
+        $application = Student::create($request->all());
+        $user = User::find($request->user_id);
+        return redirect()->route('students.index')
+        ->with('success', "{$user->first_name} has been created successfully");
+
+
         // Flash success message
         Session::flash('success', 'Student created successfully.');
         return redirect()->route('students.index');
@@ -59,7 +65,9 @@ class StudentController extends Controller
     }
 
     public function edit(Student $student)
-    {
+    {    // Explicitly allow access
+       
+        
         return view('students.edit', compact('student'));
     }
 

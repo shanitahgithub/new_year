@@ -86,7 +86,7 @@
     <div class="collapse" id="userDropdown">
         <ul class="nav flex-column ml-3">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('users.index') }}">Students</a>
+                <a class="nav-link" href="{{ route('students.index') }}">Students</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('lecturers.index') }}">Lecturers</a>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\DataTables\CohortsDataTable;
  // Add this line at the top of your controller
+ use Illuminate\Http\Request;  // Add this at the top of your controller file
 
 use App\Models\Cohorts;
+use App\Models\User;
 
 use App\Http\Requests;
 use App\Http\Requests\CreateCohortsRequest;
@@ -58,16 +60,48 @@ class CohortsController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateCohortsRequest $request)
-    {
-        $input = $request->all();
+    // public function store(CreateCohortsRequest $request)
+    // {
+    //     $input = $request->all();
 
-        $cohorts = $this->cohortsRepository->create($input);
+    //     $cohorts = $this->cohortsRepository->create($input);
 
-        Flash::success('Cohorts saved successfully.');
+        
 
-        return redirect(route('cohorts.index'));
-    }
+    //     Flash::success('Cohorts saved successfully.');
+
+    //     return redirect(route('cohorts.index'));
+    // }
+
+//     public function store(CreateCohortsRequest $request)
+// {
+//     $input = $request->all();
+
+//     $cohort = $this->cohortsRepository->create($input);
+
+//     // Use the cohort name in the success message
+//     Flash::success("{$cohort->name} has been created successfully.");
+
+//     return redirect(route('cohorts.index'));
+// }
+
+public function store(CreateCohortsRequest $request)
+{
+    $input = $request->all();
+
+    $cohort = $this->cohortsRepository->create($input);
+
+    // Ensure the cohort has a 'name' field before accessing it
+    $cohortName = $cohort->name ?? 'Cohort';
+
+    // Use session flash message
+    session()->flash('success', "{$cohortName} has been created successfully.");
+
+    return redirect(route('cohorts.index'));
+}
+
+
+
 
     /**
      * Display the specified Cohorts.
@@ -121,24 +155,44 @@ class CohortsController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateCohortsRequest $request)
-    {
-        $cohorts = $this->cohortsRepository->find($id);
+    // public function update($id, UpdateCohortsRequest $request)
+    // {
+    //     $cohorts = $this->cohortsRepository->find($id);
 
-        if (empty($cohorts)) {
-            Flash::error('Cohorts not found');
+    //     if (empty($cohorts)) {
+    //         Flash::error('Cohorts not found');
 
-            return redirect(route('cohorts.index'));
-        }
+    //         return redirect(route('cohorts.index'));
+    //     }
 
-        $cohorts = $this->cohortsRepository->update($request->all(), $id);
+    //     $cohorts = $this->cohortsRepository->update($request->all(), $id);
 
-        Flash::success('Cohorts updated successfully.');
+    //     Flash::success('Cohorts updated successfully.');
 
-        return redirect(route('cohorts.index'));
-    }
+    //     return redirect(route('cohorts.index'));
+    // }
 
-    /**
+    public function update(Request $request, $id)
+{
+    // Define validation rules
+    $request->validate([
+        'name' => 'required|string|max:255|unique:cohorts,name,' . $id, // Ensure name is unique except for the current record
+        'start_date' => 'required|date',
+        'end_date' => 'required|date|after:start_date', // Ensure end date is after start date
+        'status' => 'required|in:active,inactive', // Only allow "active" or "inactive"
+        'expected_graduation_date' => 'nullable|date', // Make sure the expected graduation date is valid (nullable if optional)
+        'curriculum' => 'required|in:old,new', // Ensure curriculum is either 'old' or 'new'
+        'number_of_students' => 'required|integer', // Ensure number of students is an integer
+    ]);
+
+    // Find the cohort and update
+    $cohort = Cohorts::findOrFail($id);
+    $cohort->update($request->all());
+
+    return redirect()->route('cohorts.index')->with('success', 'Cohort updated successfully.');
+}
+
+     /**
      * Remove the specified Cohorts from storage.
      *
      * @param  int $id

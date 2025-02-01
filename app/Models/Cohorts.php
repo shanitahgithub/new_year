@@ -3,63 +3,47 @@
 namespace App\Models;
 
 use Eloquent as Model;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-/**
- * Class Cohorts
- * @package App\Models
- * @version January 27, 2025, 7:02 pm UTC
- *
- * @property string $name
- * @property string $status
- * @property string $students
- * @property string $start_date
- * @property string $end_date
- */
 class Cohorts extends Model
 {
-
     use HasFactory;
 
     public $table = 'cohorts';
-    
 
-
-
-    public $fillable = [
+    protected $fillable = [
         'name',
-        'status',
-        'students',
         'start_date',
-        'end_date'
+        'end_date',
+        'status',
+        'number_of_students',
+        'expected_graduation_date',
+        'curriculum',
+        'created_at',
+        'updated_at'
     ];
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'name' => 'string',
-        'status' => 'string',
-        'students' => 'string',
         'start_date' => 'date',
-        'end_date' => 'date'
+        'end_date' => 'date',
+        'status' => 'string',
+        'number_of_students' => 'integer',
+        'expected_graduation_date' => 'date',
+        'curriculum' => 'string',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
     public static $rules = [
-        'name' => 'required|string|min:5|max:150',
-        'status' => 'required',
-        'students' => 'required|string|min:5|max:150',
+        'name' => 'required|string|unique:cohorts,name|min:5|max:150',
         'start_date' => 'required|date',
-        'end_date' => 'nullable|date'
+        'end_date' => 'nullable|date|after:start_date',
+        'status' => 'required|in:active,inactive',
+        'number_of_students' => 'integer|min:0',
+        'expected_graduation_date' => 'required|date|after:start_date',
+        'curriculum' => 'required|in:old,new',
+        'created_at' => 'nullable|date',
+        'updated_at' => 'nullable|date'
     ];
-
-    
 }

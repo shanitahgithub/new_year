@@ -41,10 +41,14 @@ class StudentApplicationController extends Controller
             'points_scored' => 'required|integer',
             'uace_year_of_completion' => 'nullable|string'
         ]);
-
+    //    This returns the success message including the user name
         StudentApplication::create($validatedData);
+        $application = StudentApplication::create($request->all());
+        $user = User::find($request->user_id);
+        return redirect()->route('student_applications.index')
+        ->with('success', "{$user->first_name} has been created successfully");
 
-        return redirect()->route('student_applications.index')->with('success', 'Application created successfully');
+        // return redirect()->route('student_applications.index')->with('success', '{$user->first_name}has been created successfully');
     }
 
     public function show(StudentApplication $studentApplication)
