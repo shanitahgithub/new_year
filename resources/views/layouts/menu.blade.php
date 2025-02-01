@@ -131,12 +131,22 @@
     <div class="collapse {{ Request::is('roles*') || Request::is('students*') || Request::is('lecturers*') ? 'show' : '' }}"
         id="userDropdown">
         <ul class="nav flex-column ml-3">
+
+
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('roles*') ? 'text-danger' : '' }}" href="{{ route('roles.index') }}">
                     <i class="fa fa-building"></i>
                     <span class="{{ Request::is('roles*') ? 'text-danger' : '' }}">Roles</span>
                 </a>
             </li>
+
+            {{-- <li class="nav-item">
+                <a class="nav-link {{ Request::is('users*') ? 'text-danger' : '' }}" href="{{ route('users.index') }}">
+                    <i class="fa fa-user-graduate"></i>
+                    <span class="{{ Request::is('users*') ? 'text-danger' : '' }}">Users</span>
+                </a>
+            </li> --}}
+
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('students*') ? 'text-danger' : '' }}"
                     href="{{ route('students.index') }}">

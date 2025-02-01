@@ -6,7 +6,8 @@
     <a href="{{ route('roles.create') }}" class="btn btn-primary">Add New Role</a>
 
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="roles-table">
+            <!-- Added ID -->
             <thead>
                 <tr>
                     {{-- <th>ID</th> --}}
@@ -35,8 +36,18 @@
                 @endforeach
             </tbody>
         </table>
-
-
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#roles-table').DataTable({  // Updated ID to match the table's ID
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "pageLength": 5,
+            "lengthMenu": [5, 10, 25, 50]
+        });
+    });
+</script>
 @endsection
