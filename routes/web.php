@@ -50,3 +50,6 @@ use App\Http\Controllers\StudentApplicationController;
 
 Route::resource('student_applications', StudentApplicationController::class);
 Route::get('/student_applications', [StudentApplicationController::class, 'index'])->name('student_applications.index');
+
+
+Route::resource('roles', App\Http\Controllers\RolesController::class);

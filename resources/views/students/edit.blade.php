@@ -4,10 +4,12 @@
 
 @section('content')
 <div class="container mt-4">
+    <h4>Edit Student</h4>
     <div class="card shadow-sm">
-        <div class="card-header bg-warning text-dark">
-            <h4>Edit Student</h4>
-        </div>
+
+        {{-- <div class="card-header bg-warning text-dark">
+
+        </div> --}}
         <div class="card-body">
             <form action="{{ route('students.update', $student->id) }}" method="POST">
                 @csrf
@@ -46,12 +48,13 @@
                     <input type="text" name="cohort" class="form-control" value="{{ $student->cohort->name }}" required>
                 </div>
 
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-success">Update</button>
-                    <a href="{{ route('students.index') }}" class="btn btn-secondary">Cancel</a>
-                </div>
+
             </form>
         </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success">Update</button>
+        <a href="{{ route('students.index') }}" class="btn btn-secondary">Cancel</a>
     </div>
 </div>
 @endsection

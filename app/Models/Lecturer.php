@@ -18,10 +18,8 @@ class Lecturer extends Authenticatable
         'gender',
         'position',
         'status',
-        'supervised_students',
-        'social_links',
-        'office_hours',
-        'password',
+        
+        
         'image',
     ];
 

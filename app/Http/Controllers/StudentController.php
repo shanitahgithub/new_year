@@ -28,7 +28,7 @@ class StudentController extends Controller
         $students = Student::with(['user', 'cohort', 'studentApplication'])->get();
         return view('students.index', compact('students'));
     }
-
+// FOREIGN KEYS TO BE DISPLAYED
     public function create()
     {
         $users = User::all();  // Get all users
@@ -66,6 +66,9 @@ class StudentController extends Controller
 
     public function edit(Student $student)
     {    // Explicitly allow access
+
+        
+        
        
         
         return view('students.edit', compact('student'));

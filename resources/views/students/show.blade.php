@@ -23,6 +23,7 @@
 @section('content')
 <div class="container mt-4">
     <h4>Student Details</h4>
+
     <div class="card shadow-sm">
         {{-- <div class="card-header bg-primary text-white"> --}}
 
@@ -71,16 +72,18 @@
             </table>
 
             <div class="text-center mt-3">
-                <a href="{{ route('students.index') }}" class="btn btn-secondary">Back</a>
-                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning">Edit</a>
+
+                {{-- <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning">Edit</a>
                 <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
                     @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger"
-                        onclick="return confirm('Are you sure you want to delete this student?')">Delete</button>
-                </form>
+                    @method('DELETE') --}}
+                    {{-- <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this student?')">Delete</button> --}}
+                    {{--
+                </form> --}}
             </div>
         </div>
     </div>
+    <a href="{{ route('students.index') }}" class="btn btn-secondary">Back</a>
 </div>
 @endsection

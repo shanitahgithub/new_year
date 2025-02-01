@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lecturer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,9 +29,7 @@ class LecturerController extends Controller
             'gender' => 'nullable|string|max:255',
             'position' => 'nullable|string|max:255',
             'status' => 'nullable|string|max:255',
-            'supervised_students' => 'nullable|string|max:255',
-            'social_links' => 'nullable|string|max:255',
-            'office_hours' => 'nullable|string|max:255',
+            
             'password' => 'nullable|string|min:6|max:255', // Password is optional
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -43,9 +42,9 @@ class LecturerController extends Controller
         $lecturer->gender = $request->gender;
         $lecturer->position = $request->position;
         $lecturer->status = $request->status;
-        $lecturer->supervised_students = $request->supervised_students;
-        $lecturer->social_links = $request->social_links;
-        $lecturer->office_hours = $request->office_hours;
+        
+
+        
 
         // Set password (use provided password or default to "123456")
         $lecturer->password = Hash::make($request->password ?? '123456');
@@ -58,6 +57,8 @@ class LecturerController extends Controller
         }
 
         $lecturer->save(); // Save lecturer to database
+
+        
 
         return redirect()->route('lecturers.index')->with('success', 'Lecturer added successfully!');
     }
@@ -81,9 +82,7 @@ class LecturerController extends Controller
             'gender' => 'nullable|string|max:255',
             'position' => 'nullable|string|max:255',
             'status' => 'nullable|string|max:255',
-            'supervised_students' => 'nullable|string|max:255',
-            'social_links' => 'nullable|string|max:255',
-            'office_hours' => 'nullable|string|max:255',
+            
             'password' => 'nullable|string|min:6|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -94,10 +93,7 @@ class LecturerController extends Controller
         $lecturer->gender = $request->gender;
         $lecturer->position = $request->position;
         $lecturer->status = $request->status;
-        $lecturer->supervised_students = $request->supervised_students;
-        $lecturer->social_links = $request->social_links;
-        $lecturer->office_hours = $request->office_hours;
-
+        
         // Update password if provided
         if ($request->filled('password')) {
             $lecturer->password = Hash::make($request->password);

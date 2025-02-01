@@ -25,22 +25,9 @@
         <strong>Status:</strong> {{ $lecturer->status }}
     </div>
 
-    <div class="mb-3">
-        <strong>Supervised Students (Final Year Projects):</strong> {{ $lecturer->supervised_students }}
-    </div>
 
-    <div class="mb-3">
-        <strong>Social Links:</strong> {{ $lecturer->social_links }}
-    </div>
 
-    <div class="mb-3">
-        <strong>Office Hours:</strong> {{ $lecturer->office_hours }}
-    </div>
 
-    <div class="mb-3">
-        <strong>Profile Image:</strong><br>
-        <img src="{{ asset('storage/' . $lecturer->image) }}" alt="Lecturer Image" width="150">
-    </div>
 
     <a href="{{ route('lecturers.index') }}" class="btn btn-secondary">Back to List</a>
 </div>

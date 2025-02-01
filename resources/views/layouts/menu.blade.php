@@ -78,7 +78,26 @@
 </li> --}}
 
 <!-- User Management Dropdown -->
-<li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+{{-- <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+    <a class="nav-link dropdown-toggle" href="#" id="userManagementDropdown" role="button" data-toggle="collapse"
+        data-target="#userDropdown" aria-expanded="false">
+        <i class="fa fa-users"></i> <span>User Management</span>
+    </a>
+    <div class="collapse" id="userDropdown">
+        <ul class="nav flex-column ml-3">
+            <a class="nav-link" href="{{ route('roles.index') }}"><i class="fas fa-building"></i><span>Roles</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('students.index') }}">Students</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('lecturers.index') }}">Lecturers</a>
+</li>
+</ul>
+</div>
+</li> --}}
+
+{{-- <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
     <a class="nav-link dropdown-toggle" href="#" id="userManagementDropdown" role="button" data-toggle="collapse"
         data-target="#userDropdown" aria-expanded="false">
         <i class="fa fa-users"></i> <span>User Management</span>
@@ -86,10 +105,51 @@
     <div class="collapse" id="userDropdown">
         <ul class="nav flex-column ml-3">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('students.index') }}">Students</a>
+                <a class="nav-link" href="{{ route('roles.index') }}">
+                    <i class="fa fa-building"></i> <span>Roles</span>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('lecturers.index') }}">Lecturers</a>
+                <a class="nav-link" href="{{ route('students.index') }}">
+                    <i class="fa fa-user-graduate"></i> <span>Students</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('lecturers.index') }}">
+                    <i class="fa fa-chalkboard-teacher"></i> <span>Lecturers</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</li> --}}
+
+<li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+    <a class="nav-link dropdown-toggle" href="#" id="userManagementDropdown" role="button" data-toggle="collapse"
+        data-target="#userDropdown" aria-expanded="false">
+        <i class="fa fa-users"></i> <span>User Management</span>
+    </a>
+    <div class="collapse {{ Request::is('roles*') || Request::is('students*') || Request::is('lecturers*') ? 'show' : '' }}"
+        id="userDropdown">
+        <ul class="nav flex-column ml-3">
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('roles*') ? 'text-danger' : '' }}" href="{{ route('roles.index') }}">
+                    <i class="fa fa-building"></i>
+                    <span class="{{ Request::is('roles*') ? 'text-danger' : '' }}">Roles</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('students*') ? 'text-danger' : '' }}"
+                    href="{{ route('students.index') }}">
+                    <i class="fa fa-user-graduate"></i>
+                    <span class="{{ Request::is('students*') ? 'text-danger' : '' }}">Students</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('lecturers*') ? 'text-danger' : '' }}"
+                    href="{{ route('lecturers.index') }}">
+                    <i class="fa fa-chalkboard-teacher"></i>
+                    <span class="{{ Request::is('lecturers*') ? 'text-danger' : '' }}">Lecturers</span>
+                </a>
             </li>
         </ul>
     </div>
@@ -153,3 +213,6 @@
         </ul>
     </div>
 </li>
+{{-- <li class="side-menus {{ Request::is('roles*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('roles.index') }}"><i class="fas fa-building"></i><span>Roles</span></a>
+</li> --}}
