@@ -57,9 +57,9 @@ class LecturerController extends Controller
         }
 
         $lecturer->save(); // Save lecturer to database
-
         
-
+        
+        
         return redirect()->route('lecturers.index')->with('success', 'Lecturer added successfully!');
     }
 
@@ -105,6 +105,7 @@ class LecturerController extends Controller
         }
 
         $lecturer->save(); // Save changes
+        
 
         return redirect()->route('lecturers.index')->with('success', 'Lecturer updated successfully!');
     }

@@ -77,14 +77,16 @@ class StudentController extends Controller
     public function update(UpdateLearnersRequest $request, Student $student)
     {
         $student->update($request->validated());
-        Session::flash('success', 'Student updated successfully.');
+        // Session::flash('success', 'Student updated successfully.');
+        session()->flash('success', "{$student->user->first_name} has been updated successfully");
         return redirect()->route('students.index');
     }
 
     public function destroy(Student $student)
     {
         $student->delete();
-        Session::flash('success', 'Student deleted successfully.');
+        // Session::flash('success', 'Student deleted successfully.');
+        session()->flash('success', "{$student->user->first_name} has been deleted successfully");
         return redirect()->route('students.index');
     }
 }

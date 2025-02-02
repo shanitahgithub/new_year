@@ -1,16 +1,22 @@
 @extends('layouts.app')
 
+@section('title')
+@lang('models/settings.plural')
+@endsection
+
 @section('content')
-<div class="container">
-    <h2 class="mb-4">Roles List</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Roles List</h3>
     <a href="{{ route('roles.create') }}" class="btn btn-primary">Add New Role</a>
+</div>
+<div class="container">
+
+
 
     <div class="table-responsive">
         <table class="table table-bordered" id="roles-table">
-            <!-- Added ID -->
             <thead>
                 <tr>
-                    {{-- <th>ID</th> --}}
                     <th>Name</th>
                     <th>Guard Name</th>
                     <th>Actions</th>
@@ -19,7 +25,6 @@
             <tbody>
                 @foreach($roles as $role)
                 <tr>
-                    {{-- <td>{{ $role->id }}</td> --}}
                     <td>{{ $role->name }}</td>
                     <td>{{ $role->guard_name }}</td>
                     <td>
@@ -38,16 +43,20 @@
         </table>
     </div>
 </div>
+@endsection
 
+@section('scripts')
 <script>
     $(document).ready(function() {
-        $('#roles-table').DataTable({  // Updated ID to match the table's ID
-            "paging": true,
-            "searching": true,
-            "ordering": true,
-            "pageLength": 5,
-            "lengthMenu": [5, 10, 25, 50]
-        });
+        if (!$.fn.dataTable.isDataTable('#roles-table')) {
+            $('#roles-table').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "pageLength": 5,
+                "lengthMenu": [5, 10, 25, 50]
+            });
+        }
     });
 </script>
 @endsection

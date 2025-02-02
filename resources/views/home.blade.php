@@ -13,12 +13,14 @@
                 <div class="row">
                     <!-- First Row of Cards -->
                     <div class="col-md-4 mb-3">
-                        <div class="card text-center shadow-sm">
-                            <div class="card-body">
-                                <i class="fas fa-graduation-cap fa-2x"></i>
-                                <h6 class="cards">5 Programs</h6>
+                        <a href="{{ route('users.index') }}">
+                            <div class="card text-center shadow-sm">
+                                <div class="card-body">
+                                    <i class="fas fa-graduation-cap fa-2x"></i>
+                                    <h6 class="cards">Users</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-md-4 mb-3">

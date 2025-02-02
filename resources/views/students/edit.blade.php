@@ -1,16 +1,12 @@
-<!-- resources/views/students/edit.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
 <div class="container mt-4">
     <h4>Edit Student</h4>
     <div class="card shadow-sm">
-
-        {{-- <div class="card-header bg-warning text-dark">
-
-        </div> --}}
         <div class="card-body">
+
+
             <form action="{{ route('students.update', $student->id) }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -29,8 +25,8 @@
 
                 <div class="form-group">
                     <label>Admission Date</label>
-                    <input type="date" name="admission_date" class="form-control" value="{{ $student->admission_date }}"
-                        required>
+                    <input type="date" name="admission_date" class="form-control"
+                        value="{{ \Carbon\Carbon::parse($student->admission_date)->format('Y-m-d') }}" required>
                 </div>
 
                 <div class="form-group">
@@ -48,13 +44,13 @@
                     <input type="text" name="cohort" class="form-control" value="{{ $student->cohort->name }}" required>
                 </div>
 
-
-            </form>
+                <!-- Closing the form here -->
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success">Update</button>
+                    <a href="{{ route('students.index') }}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form> <!-- This was missing -->
         </div>
-    </div>
-    <div class="form-group text-center">
-        <button type="submit" class="btn btn-success">Update</button>
-        <a href="{{ route('students.index') }}" class="btn btn-secondary">Cancel</a>
     </div>
 </div>
 @endsection
