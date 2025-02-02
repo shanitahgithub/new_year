@@ -36,7 +36,8 @@ class Cohorts extends Model
     ];
 
     public static $rules = [
-        'name' => 'required|string|unique:cohorts,name|min:5|max:150',
+        // 'name' => 'required|string|unique:cohorts,name|min:5|max:150',
+        'name' => 'required|string|min:5|max:150|unique:cohorts,name,' ,
         'start_date' => 'required|date',
         'end_date' => 'nullable|date|after:start_date',
         'status' => 'required|in:active,inactive',
