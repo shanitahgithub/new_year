@@ -1,6 +1,6 @@
 <?php
-use App\Models\Program;
-$programs =  Program::pluck('name', 'id') ;
+use App\Models\Semester;
+$semesters =  Semester::pluck('name', 'id') ;
 ?>
 <!-- Course Name Field -->
 <div class="form-group col-sm-6">

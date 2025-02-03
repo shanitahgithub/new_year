@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateSemesterRequest;
 use App\Repositories\SemesterRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Program;
 use Illuminate\Support\Facades\Auth;
 use Response;
 
@@ -43,7 +44,7 @@ class SemesterController extends AppBaseController
     public function index()
 {
     // Eager load the 'user' relationship to avoid N+1 query problem
-    $semesters = Semester::with('user')->get(); 
+    $semesters = Semester::with('user','program')->get(); 
 
     return view('semesters.index', compact('semesters'));
 
@@ -61,7 +62,9 @@ class SemesterController extends AppBaseController
      */
     public function create()
     {
-        return view('semesters.create');
+        $programs = Program::all();  // Get all programs
+        return view('semesters.create', compact( 'programs'));
+        // return view('semesters.create');
     }
 
     /**

@@ -1,65 +1,64 @@
-{{-- 
-
-
- 
-
- @extends('layouts.app')
-
-@section('content')
-<section class="section">
-    <div class="section-header">
-        <h3 class="page__heading">Course Units</h3>
-    </div>
-    <div class="section-body">
-        <div class="row">
-            @foreach ($courseUnits as $unit)
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $unit['name'] }}</h5>
-                            <p class="card-text">{{ $unit['description'] }}</p>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-@endsection --}}
-
+{{--
 
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="section-header"> 
-            <h1 class="page__heading m-0">@lang('Course Units')</h1> 
-           <div class="filter-container section-header-breadcrumb row justify-content-md-end">
-               <a href="{{ route('course-units.index') }}" class="btn btn-primary">@lang('Back')</a>
-           </div>
-        {{-- <h1>Course Units</h1> --}}
-        
-        <a href="{{ route('course-units.create') }}" class="btn btn-primary">Add Course Unit</a>
-        <div class="row mt-4">
+<div class="container">
+    <h1>Course Units</h1>
+    <a href="{{ route('course-units.create') }}" class="btn btn-primary mb-3">Create Course Unit</a>
+    <table class="table" id="courses-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Semester</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach($courseUnits as $courseUnit)
-                <div class="col-md-4">
-                    <div class="card text-center shadow-sm">
-                        <div class="card-body">
-                            {{-- <i class="fas fa-book fa-2x"></i> --}}
-                            <h6 class="cards">{{ $courseUnit->name }}</h6>
-                            <p>{{ $courseUnit->description }}</p>
-                            <h6>{{ $courseUnit->semester }}</h6>
-                            <a href="{{ route('course-units.edit', $courseUnit->id) }}" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('course-units.destroy', $courseUnit->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <tr>
+                <td>{{ $courseUnit->name }}</td>
+                <td>{{ $courseUnit->description }}</td>
+                <td>{{ $courseUnit->semester }}</td>
+                <td>{{ $courseUnit->status }}</td>
+                <td>
+                    <a href="{{ route('course-units.show', $courseUnit->id) }}" class="btn btn-light">View</a>
+                    <a href="{{ route('course-units.edit', $courseUnit->id) }}" class="btn btn-warning">Edit</a>
+                    {!! Form::open(['route' => ['course-units.destroy', $courseUnit->id], 'method' => 'delete',
+                    'style' => 'display:inline']) !!}
+                    {!! Form::button('Delete', ['class' => 'btn btn-danger', 'type' => 'submit', 'onclick' =>
+                    'return confirm("Are you sure?")']) !!}
+                    {!! Form::close() !!}
+                </td>
+            </tr>
             @endforeach
-        </div>
+        </tbody>
+    </table>
+</div>
+@endsection --}}
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1>Course Units</h1>
+
+    <!-- Link to create a new course unit -->
+    <a href="{{ route('course-units.create') }}" class="btn btn-primary mb-3">
+        <i class="fa fa-plus"></i> Add New Course Unit
+    </a>
+
+    <!-- Display success message if any -->
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
     </div>
+    @endif
+
+    <!-- Include the table to show course units -->
+    @include('courses.table', ['courseUnits' => $courseUnits])
+
+</div>
 @endsection

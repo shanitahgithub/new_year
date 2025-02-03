@@ -1,30 +1,55 @@
 <div class="table-responsive">
-    <table class="table" id="courses-table">
+    <table id="courseUnitsTable" class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>@lang('models/courses.fields.name')</th>
-                <th>@lang('models/courses.fields.description')</th>
-                <th>@lang('models/courses.fields.semester')</th>
-                <th colspan="3">@lang('crud.action')</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Course Unit Code</th>
+                <th>Status</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Created By</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        @foreach($courseUnits as $courseUnit)
+            @foreach($courseUnits as $courseUnit)
             <tr>
                 <td>{{ $courseUnit->name }}</td>
                 <td>{{ $courseUnit->description }}</td>
-                <td>{{ $courseUnit->semester }}</td>
+                <td>{{ $courseUnit->course_unit_code }}</td>
+                <td>{{ $courseUnit->status }}</td>
+                <td>{{ $courseUnit->semester ? $courseUnit->semester->name : 'No Semester' }}</td>
+                <td>{{ $courseUnit->credit_unit }}</td>
+                <td>{{ Auth::user()->first_name }}</td>
                 <td class="text-center">
-                    {!! Form::open(['route' => ['course-units.destroy', $courseUnit->id], 'method' => 'delete']) !!}
-                    <div class='btn-group'>
-                        <a href="{!! route('course-units.show', [$courseUnit->id]) !!}" class='btn btn-light action-btn '><i class="fa fa-eye"></i></a>
-                        <a href="{!! route('course-units.edit', [$courseUnit->id]) !!}" class='btn btn-warning action-btn edit-btn'><i class="fa fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger action-btn delete-btn', 'onclick' => 'return confirm("'.__('crud.are_you_sure').'")']) !!}
-                    </div>
+                    <a href="{{ route('course-units.show', $courseUnit->id) }}" class="btn btn-light btn-sm">
+                        <i class="fa fa-eye"></i> Show
+                    </a>
+                    <a href="{{ route('course-units.edit', $courseUnit->id) }}" class="btn btn-warning btn-sm">
+                        <i class="fa fa-edit"></i> Edit
+                    </a>
+                    {!! Form::open(['route' => ['course-units.destroy', $courseUnit->id], 'method' => 'delete', 'style'
+                    => 'display:inline']) !!}
+                    {!! Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn
+                    btn-danger btn-sm', 'onclick' => 'return confirm("Are you sure you want to delete this course
+                    unit?")']) !!}
                     {!! Form::close() !!}
                 </td>
             </tr>
-        @endforeach
+            @endforeach
         </tbody>
     </table>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#courseUnitsTable').DataTable({
+            "paging": true,           // Enables paging
+            "searching": true,        // Enables search
+            "ordering": true,         // Enables sorting
+            "pageLength": 5,          // Number of rows per page
+            "lengthMenu": [5, 10, 25, 50] // Options for page length
+        });
+    });
+</script>

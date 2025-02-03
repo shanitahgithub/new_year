@@ -3,46 +3,91 @@ namespace App\Http\Controllers;
 
 use App\Models\CourseUnit;
 use Illuminate\Http\Request;
+use App\Models\Semester;
 
 class CourseUnitController extends Controller
 {
+
+    
     // Display all course units
-    public function index()
-    {
-        $courseUnits = CourseUnit::all(); // Fetch all course units from the database
-        return view('courses.index', compact('courseUnits'));
-    }
+    // public function index()
+    // {
+    //     $courseUnits = CourseUnit::all(); // Fetch all course units from the database
+    //     return view('courses.index', compact('courseUnits'));
+    // }
+
+//     public function index()
+// {
+//     // Fetch course units with the 'semester_id' field using get() and select()
+//     $courseUnits = CourseUnit::select('semester_id')->get();
+
+//     return view('courses.index', compact('courseUnits'));
+// }
+public function index()
+{
+    // Fetch course units with the semester relationship loaded
+    $courseUnits = CourseUnit::with('semester')->get();
+
+    return view('courses.index', compact('courseUnits'));
+}
+
+
 
     // Show the form for creating a new course unit
-    public function create()
-    {
-        return view('courses.create');
-    }
+    // public function create()
+    // {
+        public function create()
+{
+    // Fetch all semesters to display in the dropdown
+    $semesters = Semester::all(); // Make sure you have a Semester model
+
+    return view('courses.create', compact('semesters'));
+}
+
+        // return view('courses.create');
+    
 
     // Store a newly created course unit
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'semester' => 'required|string',
-        ]);
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'required|string',
+        'semester_id' => 'required|exists:semesters,id', // Validate that semester_id exists in the semesters table
+        'course_unit_code' => 'nullable|string|max:255',
+        'status' => 'nullable|in:active,inactive',
+        'credit_unit' => 'nullable|integer',
+    ]);
 
-        CourseUnit::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'semester' => $request->semester
-        ]);
+    // Store the new course unit with the correct fields
+    CourseUnit::create([
+        'name' => $request->name,
+        'description' => $request->description,
+        'semester_id' => $request->semester_id,
+        'course_unit_code' => $request->course_unit_code,
+        'status' => $request->status ?? 'active',
+        'credit_unit' => $request->credit_unit ?? 3,
+        'created_by' => auth()->id(), // Automatically assign the current user
+    ]);
 
-        return redirect()->route('course-units.index')->with('success', 'Course Unit created successfully');
-    }
+    return redirect()->route('course-units.index')->with('success', 'Course Unit created successfully');
+}
 
     // Show the form for editing the specified course unit
+    // public function edit($id)
+    // {
+    //     $courseUnit = CourseUnit::findOrFail($id);
+    //     return view('courses.edit', compact('courseUnit'));
+    // }
     public function edit($id)
-    {
-        $courseUnit = CourseUnit::findOrFail($id);
-        return view('courses.edit', compact('courseUnit'));
-    }
+{
+    // Fetch the course unit that needs to be edited
+    $courseUnit = CourseUnit::findOrFail($id);
+    
+    // Pass the course unit data to the view
+    return view('courses.edit', compact('courseUnit'));
+}
+
 
     // Update the specified course unit
     public function update(Request $request, $id)
@@ -50,14 +95,26 @@ class CourseUnitController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'semester' => 'required|string',
+            
+            'course_unit_code' => 'nullable|string|max:255',
+            'status' => 'nullable|in:active,inactive',
+            'semester_id' => 'required|integer',
+            'credit_unit' => 'nullable|integer',
+            'created_by' => 'required|integer',
         ]);
 
         $courseUnit = CourseUnit::findOrFail($id);
+
+        // Update the course unit with the new fields
         $courseUnit->update([
             'name' => $request->name,
             'description' => $request->description,
-            'semester' => $request->semester
+            
+            'course_unit_code' => $request->course_unit_code,
+            'status' => $request->status ?? 'active', // Default value for 'status'
+            'semester_id' => $request->semester_id,
+            'credit_unit' => $request->credit_unit ?? 3, // Default value for 'credit_unit'
+            'created_by' => $request->created_by,
         ]);
 
         return redirect()->route('course-units.index')->with('success', 'Course Unit updated successfully');
@@ -72,21 +129,3 @@ class CourseUnitController extends Controller
         return redirect()->route('course-units.index')->with('success', 'Course Unit deleted successfully');
     }
 }
-
-// use Illuminate\Http\Request;
-
-// class CourseUnitController extends Controller
-// {
-//     public function index()
-//     {
-//         $courseUnits = [
-//             ['id' => 1, 'name' => 'Introduction to Programming', 'description' => 'Learn the basics of programming with Python.'],
-//             ['id' => 2, 'name' => 'Web Development', 'description' => 'Master the fundamentals of building modern websites.'],
-//             ['id' => 3, 'name' => 'Database Management', 'description' => 'Understand relational databases and SQL.'],
-//             ['id' => 4, 'name' => 'Data Structures and Algorithms', 'description' => 'Enhance your problem-solving skills with algorithms.'],
-//             ['id' => 5, 'name' => 'Machine Learning', 'description' => 'Explore the basics of AI and machine learning techniques.'],
-//         ];
-
-//         return view('courses.index', compact('courseUnits'));
-//     }
-// }

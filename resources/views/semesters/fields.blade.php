@@ -46,11 +46,17 @@ $programs =  Program::pluck('name', 'id') ;
 
 <!-- Program Id Field -->
 
-<div class="form-group col-sm-6">
+{{-- <div class="form-group col-sm-6">
     {!! Form::label('program', 'Program:') !!}
     {!! Form::select('program', $programs, null, ['class' => 'form-control']) !!}
 
+</div> --}}
+
+<div class="form-group col-sm-6">
+    {!! Form::label('Program') !!}
+    {!! Form::select('program', $programs, null, ['class' => 'form-control', 'placeholder' => 'Select program']) !!}
 </div>
+
 
 <div class="form-group col-sm-6">
     {!! Form::label('status', 'Status:') !!}

@@ -81,7 +81,9 @@
             <td>
                 <span class="badge bg-success text-white">{{ $semester->status }}</span>
             </td>
-            <td>{{ $semester->programs->name ?? 'Loading....' }}</td>
+            <td>{{ $semester->program->name ?? 'Loading....' }}</td>
+            {{-- <td>{{ $semester->program ? $semester->program->name : 'No Program' }}</td> --}}
+
             <td>
                 @if($semester->user)
                 {{ $semester->user->first_name }}
