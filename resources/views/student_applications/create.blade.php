@@ -204,7 +204,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="user_id">User:</label>
+                    <label for="user_id">Student:</label>
                     <select name="user_id" id="user_id" class="form-control" required>
                         <option value="">Select User</option>
                         @foreach($users as $user)

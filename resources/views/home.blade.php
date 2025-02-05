@@ -66,116 +66,118 @@
                         </div>
                     </div> --}}
                     <div class="col-md-4 mb-3">
-                        <div class="card text-center shadow-sm">
-                            <div class="card-body">
-                                <i class="fas fa-plus fa-2x"></i>
-                                <h6 class="cards">Enrollment</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card text-center shadow-sm">
-                            <div class="card-body">
-                                <i class="fas fa-pencil-alt fa-2x"></i>
-                                <h6 class="cards">Lessons</h6>
-                            </div>
-                        </div>
+                        <a href="{{ route('enrollments.index') }}">
+                            <div class="card text-center shadow-sm">
+                                <div class="card-body">
+                                    <i class="fas fa-plus fa-2x"></i>
+                                    <h6 class="cards">Enrollment</h6>
+                                </div>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Attendance Chart Section -->
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5>Attendance</h5>
-                        <canvas id="attendanceChart" height="200"></canvas>
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-pencil-alt fa-2x"></i>
+                            <h6 class="cards">Lessons</h6>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Sidebar: Upcoming Events and Recent Activity -->
-            <div class="col-lg-4">
-                <!-- Upcoming Events Section -->
-                <div class="card shadow-sm mb-3">
-                    <div class="card-body">
-                        <h5 class="mb-3">Upcoming</h5>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="text-danger fas fa-bell fa-lg mr-2"></i>
-                            <div>
-                                <p class="mb-0 font-weight-bold">Meeting with Mrs.Barbra</p>
-                                <small>09:20 AM | Due Soon</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="text-danger fas fa-bell fa-lg mr-2"></i>
-                            <div>
-                                <p class="mb-0 font-weight-bold">Meeting with Mrs.Leticia</p>
-                                <small>07:20 PM | Due Soon</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Activity Section -->
-                <div class="card shadow-sm mb-3">
-                    <div class="card-body">
-                        <h5>Recent Activity</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-tasks mr-2"></i> Submission NLP Programming</li>
-                            <li><i class="fas fa-tasks mr-2"></i> Outcome Administration</li>
-                            <li><i class="fas fa-tasks mr-2"></i> Teacher Panel Discussion</li>
-                            <li><i class="fas fa-tasks mr-2"></i> Submission Data Structure</li>
-                            <li><i class="fas fa-tasks mr-2"></i> Submission Module 5</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Latest Message Section -->
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5>Latest Message</h5>
-                        <p class="mb-0">No new messages</p>
-                    </div>
+            <!-- Attendance Chart Section -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5>Attendance</h5>
+                    <canvas id="attendanceChart" height="200"></canvas>
                 </div>
             </div>
         </div>
 
-        <!-- Notice Board and Events Calendar -->
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="card p-4" style="border: 2px solid #b49b5c;">
-                    <h5 style="color: black;">Notice Board</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>School annual sports day</strong><br>
-                            <span>20 July, 2025</span>
-                            <span class="float-right">20k views</span>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Women's Empowerment</strong><br>
-                            <span>10 July, 2025</span>
-                            <span class="float-right">15k views</span>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>30 days of coding challenge festival</strong><br>
-                            <span>05 July, 2025</span>
-                            <span class="float-right">15k views</span>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Thank God Its a Friday</strong><br>
-                            <span>05 July, 2025</span>
-                            <span class="float-right">15k views</span>
-                        </li>
+        <!-- Right Sidebar: Upcoming Events and Recent Activity -->
+        <div class="col-lg-4">
+            <!-- Upcoming Events Section -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="mb-3">Upcoming</h5>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="text-danger fas fa-bell fa-lg mr-2"></i>
+                        <div>
+                            <p class="mb-0 font-weight-bold">Meeting with Mrs.Barbra</p>
+                            <small>09:20 AM | Due Soon</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="text-danger fas fa-bell fa-lg mr-2"></i>
+                        <div>
+                            <p class="mb-0 font-weight-bold">Meeting with Mrs.Leticia</p>
+                            <small>07:20 PM | Due Soon</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5>Recent Activity</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-tasks mr-2"></i> Submission NLP Programming</li>
+                        <li><i class="fas fa-tasks mr-2"></i> Outcome Administration</li>
+                        <li><i class="fas fa-tasks mr-2"></i> Teacher Panel Discussion</li>
+                        <li><i class="fas fa-tasks mr-2"></i> Submission Data Structure</li>
+                        <li><i class="fas fa-tasks mr-2"></i> Submission Module 5</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="card p-4" style="border: 2px solid white;">
-                    <h5 style="color: black ">Events Calendar</h5>
-                    <div id="eventsCalendar"></div>
+            <!-- Latest Message Section -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5>Latest Message</h5>
+                    <p class="mb-0">No new messages</p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Notice Board and Events Calendar -->
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card p-4" style="border: 2px solid #b49b5c;">
+                <h5 style="color: black;">Notice Board</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>School annual sports day</strong><br>
+                        <span>20 July, 2025</span>
+                        <span class="float-right">20k views</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Women's Empowerment</strong><br>
+                        <span>10 July, 2025</span>
+                        <span class="float-right">15k views</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>30 days of coding challenge festival</strong><br>
+                        <span>05 July, 2025</span>
+                        <span class="float-right">15k views</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Thank God Its a Friday</strong><br>
+                        <span>05 July, 2025</span>
+                        <span class="float-right">15k views</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card p-4" style="border: 2px solid white;">
+                <h5 style="color: black ">Events Calendar</h5>
+                <div id="eventsCalendar"></div>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
 @endsection

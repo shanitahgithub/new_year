@@ -103,12 +103,24 @@ Edit Student Application
                                     =>
                                     'form-control']) !!}
                                 </div>
+                                {{-- Drop down for Nationality with different options --}}
 
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     {!! Form::label('nationality', 'Nationality') !!}
                                     {!! Form::text('nationality', $studentApplication->nationality, ['class' =>
                                     'form-control']) !!}
+                                </div> --}}
+
+                                <div class="form-group col-md-6">
+                                    {!! Form::label('nationality', 'Nationality') !!}
+                                    {!! Form::select('nationality',
+                                    ['Ugandan' => 'Ugandan', 'Kenyan' => 'Kenyan', 'Tanzanian' => 'Tanzanian', 'Rwandan'
+                                    => 'Rwandan'],
+                                    $studentApplication->nationality,
+                                    ['class' => 'form-control', 'placeholder' => 'Select Nationality']
+                                    ) !!}
                                 </div>
+
 
                                 <div class="form-group col-md-6">
                                     {!! Form::label('interview_date', 'Interview Date') !!}
@@ -116,12 +128,21 @@ Edit Student Application
                                     'form-control']) !!}
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     {!! Form::label('interview_result', 'Interview Result') !!}
                                     {!! Form::select('interview_result', ['pending' => 'Pending', 'fail' =>
                                     'Failed','pass' => 'Passed'],
                                     $studentApplication->interview_result, ['class' => 'form-control']) !!}
+                                </div> --}}
+                                <div class="form-group">
+                                    {!! Form::label('interview_result', 'Interview Result') !!}
+                                    {!! Form::select('interview_result',
+                                    ['pending' => 'Pending', 'passed' => 'Passed', 'failed' => 'Failed'],
+                                    $studentApplication->interview_result ?? null,
+                                    ['class' => 'form-control', 'placeholder' => 'Select Interview Result']
+                                    ) !!}
                                 </div>
+
 
                                 <div class="form-group col-md-6">
                                     {!! Form::label('submitted_documents', 'Submitted Documents') !!}

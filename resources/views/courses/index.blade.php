@@ -43,7 +43,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Course Units</h1>
+    <h3>Course Units</h3>
 
     <!-- Link to create a new course unit -->
     <a href="{{ route('course-units.create') }}" class="btn btn-primary mb-3">
@@ -51,11 +51,11 @@
     </a>
 
     <!-- Display success message if any -->
-    @if(session('success'))
+    {{-- @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-    @endif
+    @endif --}}
 
     <!-- Include the table to show course units -->
     @include('courses.table', ['courseUnits' => $courseUnits])

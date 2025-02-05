@@ -96,7 +96,7 @@ class UserController extends AppBaseController
 
           $name = ucwords($request->last_name ." " . $request->first_name);
           $useRole = Role::find($request->role_id);
-          session()->flash('success', $name . ' has been added successfully as a ' . $useRole->name);
+          session()->flash('success', $name . ' has been added successfully as  ' . $useRole->name);
 
         //   session()->flash($name.' has been added successfully as a '.$useRole);
 
@@ -193,4 +193,16 @@ class UserController extends AppBaseController
 
         return redirect(route('users.index'));
     }
+
+
+    // In UserController.php
+public function bulkDestroy(Request $request)
+{
+    $userIds = $request->input('user_ids');
+    if ($userIds) {
+        User::whereIn('id', $userIds)->delete();
+    }
+    return redirect()->route('users.index')->with('success', 'Selected users deleted successfully.');
+}
+
 }

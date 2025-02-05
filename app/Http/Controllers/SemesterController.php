@@ -179,4 +179,18 @@ class SemesterController extends AppBaseController
 
         return redirect(route('semesters.index'));
     }
+
+    public function bulkDelete(Request $request)
+    {
+        $ids = $request->input('ids');
+    
+        if (!$ids) {
+            return redirect()->back()->with('error', 'No semesters selected.');
+        }
+    
+        Semester::whereIn('id', $ids)->delete();
+    
+        return redirect()->back()->with('success', 'Selected semesters deleted successfully.');
+    }
+    
 }

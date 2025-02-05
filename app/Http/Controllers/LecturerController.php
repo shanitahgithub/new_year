@@ -115,4 +115,16 @@ class LecturerController extends Controller
         $lecturer->delete(); // Delete lecturer
         return redirect()->route('lecturers.index')->with('success', 'Lecturer deleted successfully!');
     }
+
+
+    public function bulkDestroy(Request $request)
+    {
+        // Get the selected application IDs
+        $ids = explode(',', $request->input('ids'));
+
+        // Delete the selected student applications
+        Lecturer::destroy($ids);
+
+        return redirect()->route('lecturer.index')->with('success', 'Selected applications deleted.');
+    }
 }

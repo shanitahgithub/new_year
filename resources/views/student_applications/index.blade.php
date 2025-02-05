@@ -80,12 +80,12 @@
 
 @extends('layouts.app')
 @section('title')
-Semesters
+Student Applications
 @endsection
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>Semesters</h1>
+        <h1>Student Applications</h1>
         <div class="section-header-breadcrumb">
             <a href="{{ route('student_applications.create')}}" class="btn btn-primary form-btn"> Add Student
                 Application <i class="fas fa-plus"></i></a>

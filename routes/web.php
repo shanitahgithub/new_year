@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +37,9 @@ Route::resource('semesters', App\Http\Controllers\SemesterController::class);
 Route::resource('cohorts', App\Http\Controllers\CohortsController::class);
 
 
-// Route::get('/course-units', [App\Http\Controllers\CourseUnitController::class, 'index'])->name('course-units.index');
+
 
 Route::resource('course-units', App\Http\Controllers\CourseUnitController::class);
-// Route::post('course-units', [App\Http\Controllers\CourseUnitController::class, 'store'])->name('course-units.store');
 
 
 Route::resource('lecturers', App\Http\Controllers\LecturerController::class);
@@ -55,3 +56,32 @@ Route::get('/student_applications', [StudentApplicationController::class, 'index
 
 
 Route::resource('roles', App\Http\Controllers\RolesController::class);
+use App\Http\Controllers\EnrollmentController;
+
+Route::resource('enrollments', EnrollmentController::class);
+
+// Route for bulk delete
+
+
+
+Route::delete('students/bulk-delete', [StudentController::class, 'bulkDelete'])
+    ->name('students.bulk-delete');
+Route::post('/student_applications/bulk-delete', [StudentApplicationController::class, 'bulkDelete'])->name('student_applications.bulk-delete');
+Route::post('/roles/bulk-delete', [App\Http\Controllers\RolesController::class, 'bulkDelete'])->name('roles.bulk-delete');
+Route::post('/programs/bulk-delete', [App\Http\Controllers\ProgramController::class, 'bulkDelete'])->name('programs.bulk-delete');
+Route::post('/semesters/bulk-delete', [App\Http\Controllers\SemesterController::class, 'bulkDelete'])->name('semesters.bulk-delete');
+Route::post('/cohorts/bulk-delete', [App\Http\Controllers\CohortsController::class, 'bulkDelete'])->name('cohorts.bulk-delete');
+
+Route::delete('/lecturers/bulk-delete', [App\Http\Controllers\LecturerController::class, 'bulkDelete'])->name('lecturers.bulkDelete');
+
+
+
+Route::delete('course-units/bulk-delete', [App\Http\Controllers\CourseUnitController::class, 'bulkDelete'])->name('course-units.bulkDelete');
+
+Route::post('/semesters/bulk-delete', [App\Http\Controllers\SemesterController::class, 'bulkDelete'])->name('semesters.bulk-delete');
+
+
+
+Route::resource('enrollments', App\Http\Controllers\EnrollmentController::class);
+// In routes/web.php
+Route::delete('/users/bulk-destroy', [App\Http\Controllers\UserController::class, 'bulkDestroy'])->name('users.bulkDestroy');

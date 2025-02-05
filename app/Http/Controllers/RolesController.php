@@ -159,4 +159,14 @@ class RolesController extends AppBaseController
 
         return redirect(route('roles.index'));
     }
+
+    public function bulkDelete(Request $request)
+    {
+        $ids = explode(',', $request->input('ids'));
+
+        Roles::destroy($ids);
+
+        return redirect()->route('roles.index')->with('success', 'Selected roles deleted successfully.');
+    }
 }
+

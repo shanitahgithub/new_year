@@ -20,6 +20,8 @@
                 <strong>Gender:</strong> {{ $lecturer->gender ?? 'N/A' }}
             </div>
 
+
+
             <div class="mb-3">
                 <strong>Position:</strong> {{ $lecturer->position ?? 'N/A' }}
             </div>

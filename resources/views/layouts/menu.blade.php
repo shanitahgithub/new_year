@@ -225,4 +225,7 @@
 </li>
 {{-- <li class="side-menus {{ Request::is('roles*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('roles.index') }}"><i class="fas fa-building"></i><span>Roles</span></a>
-</li> --}}
+</li> --}}<li class="side-menus {{ Request::is('enrollments*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('enrollments.index') }}"><i
+            class="fas fa-building"></i><span>Enrollments</span></a>
+</li>

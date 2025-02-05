@@ -12,7 +12,8 @@ class StudentApplication extends Model
     protected $table = 'student_applications'; // Define the table name
 
     protected $fillable = [
-        'date_of_birth',
+        
+        'user_id',
         'address',
         'status',
         'program_id',

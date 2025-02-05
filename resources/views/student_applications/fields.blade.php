@@ -1,26 +1,43 @@
 <?php
-use App\Models\User;
+use App\Models\;
 $users = User::pluck('first_name', 'last_name','id');
 ?>
 
 
-<div class="form-group">
-    <label for="user_id">User:</label>
-    <select name="user_id" id="user_id" class="form-control" required>
-        <option value="">Select User</option>
-        @foreach($users as $id => $firstName)
-        <option value="{{ $id }}" {{ old('user_id')==$id ? 'selected' : '' }}>
-            {{ $firstName }}
-        </option>
-        @endforeach
-    </select>
+<!-- First Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('first_name', 'First Name:') !!}
+    {!! Form::text('first_name', null, ['class' => 'form-control','minlength' => 3,'maxlength' => 100]) !!}
+</div>
+
+<!-- Last Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('last_name', 'Last Name:') !!}
+    {!! Form::text('last_name', null, ['class' => 'form-control','minlength' => 3,'maxlength' => 200]) !!}
+</div>
+
+<!-- Email Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('email', 'Email:') !!}
+    {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
 
-{{-- <div class="form-group">
-    <label for="user_id">User:</label>
-    <p>{{ $studentApplication->user->name }}</p>
-</div> --}}
+
+
+
+<!-- Phone Number Two Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('phone_number_two', 'Phone Number Two:') !!}
+    {!! Form::text('phone_number_two', null, ['class' => 'form-control','min' => 10,'max' => 10]) !!}
+</div>
+
+<!-- Gender Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('gender', 'Gender:') !!}
+    {!! Form::select('gender', ['female' => 'Female', 'male' => 'Male'], null, ['class' => 'form-control', 'placeholder'
+    => 'Select Gender']) !!}
+</div>
 
 <div class="form-group">
     <label for="date_of_birth">Date of Birth:</label>
@@ -31,6 +48,16 @@ $users = User::pluck('first_name', 'last_name','id');
     <label for="address">Address:</label>
     <p>{{ $studentApplication->address }}</p>
 </div>
+
+{{-- <div class="form-group">
+    <label for="status">Nationality</label>
+    <select name="status" id="status" class="form-control @error('status') is-invalid @enderror" required>
+        <option value="active" {{ old('status')=='active' ? 'selected' : '' }}>Active</option>
+        <option value="inactive" {{ old('status')=='inactive' ? 'selected' : '' }}>Inactive</option>
+        <option value="completed" {{ old('status')=='completed' ? 'selected' : '' }}>Completed</option>
+    </select>
+    @error('status') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div> --}}
 
 <div class="form-group">
     <label for="status">Status:</label>

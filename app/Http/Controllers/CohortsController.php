@@ -215,4 +215,13 @@ public function store(CreateCohortsRequest $request)
 
         return redirect(route('cohorts.index'));
     }
+
+    public function bulkDelete(Request $request)
+    {
+        $ids = explode(',', $request->input('ids'));
+
+        Cohorts::destroy($ids);
+
+        return redirect()->route('cohorts.index')->with('success', 'Selected cohorts deleted successfully.');
+    }
 }

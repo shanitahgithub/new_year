@@ -1,8 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\CourseUnit;
 use Illuminate\Http\Request;
+
+
+use App\Models\CourseUnit;
+
 use App\Models\Semester;
 
 class CourseUnitController extends Controller
@@ -128,4 +131,14 @@ public function index()
 
         return redirect()->route('course-units.index')->with('success', 'Course Unit deleted successfully');
     }
+
+    public function bulkDestroy(Request $request)
+{
+    $ids = $request->input('ids', []);
+    if (!empty($ids)) {
+        CourseUnit::whereIn('id', $ids)->delete();
+        return redirect()->route('course-units.index')->with('success', 'Selected course units have been deleted.');
+    }
+    return redirect()->route('course-units.index')->with('error', 'No course units selected for deletion.');
+}
 }

@@ -17,7 +17,7 @@ class StudentApplicationController extends Controller
     public function create()
     {
         $users = User::all();
-        $programs = Program::all() ; // Get all users
+        $programs = Program::all() ; 
         return view('student_applications.create', compact('users','programs'));
         // return view('student_applications.create');
     }
@@ -80,10 +80,13 @@ class StudentApplicationController extends Controller
             'points_scored' => 'required|integer',
             'uace_year_of_completion' => 'nullable|string'
         ]);
-
+        //  dd($validatedData);
         $studentApplication->update($validatedData);
 
-        return redirect()->route('student_applications.index')->with('success', 'Application updated successfully');
+        session()->flash('success', "{$studentApplication->user->first_name} has been updated successfully");
+    return redirect()->route('students.index');
+
+        // return redirect()->route('student_applications.index')->with('success', 'Application updated successfully');
     }
 
     public function destroy(StudentApplication $studentApplication)
@@ -91,4 +94,18 @@ class StudentApplicationController extends Controller
         $studentApplication->delete();
         return redirect()->route('student_applications.index')->with('success', 'Application deleted successfully');
     }
+
+    
+
+    public function bulkDelete(Request $request)
+    {
+        // Get the selected application IDs
+        $ids = explode(',', $request->input('ids'));
+
+        // Delete the selected student applications
+        StudentApplication::destroy($ids);
+
+        return redirect()->route('student_applications.index')->with('success', 'Selected applications deleted.');
+    }
 }
+

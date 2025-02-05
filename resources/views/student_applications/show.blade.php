@@ -30,7 +30,7 @@
             Application ID: {{ $studentApplication->id }}
         </div>
         <div class="card-body">
-            <p><strong>User:</strong> {{ $studentApplication->user->name }}</p>
+            <p><strong>Student:</strong> {{ $studentApplication->user->name }}</p>
             <p><strong>Date of Birth:</strong> {{ $studentApplication->date_of_birth }}</p>
             <p><strong>Address:</strong> {{ $studentApplication->address }}</p>
             <p><strong>Status:</strong> {{ ucfirst($studentApplication->status) }}</p>

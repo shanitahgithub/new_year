@@ -3,9 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Student;
-class UpdateLearnersRequest extends FormRequest
+use App\Models\Enrollment;
+
+class CreateEnrollmentRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -23,8 +25,6 @@ class UpdateLearnersRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-        ];
+        return Enrollment::$rules;
     }
-    
 }

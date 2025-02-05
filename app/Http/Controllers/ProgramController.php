@@ -158,4 +158,15 @@ class ProgramController extends AppBaseController
 
         return redirect(route('programs.index'));
     }
+
+    public function bulkDelete(Request $request)
+    {
+        $ids = explode(',', $request->input('ids'));
+
+        Program::destroy($ids);
+
+        return redirect()->route('programs.index')->with('success', 'Selected programs deleted successfully.');
+    }
 }
+
+

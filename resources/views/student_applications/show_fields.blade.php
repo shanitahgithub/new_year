@@ -6,7 +6,7 @@
 <!-- resources/views/student_applications/show_fields.blade.php -->
 
 <div class="form-group">
-    <strong>User:</strong>
+    <strong>Student:</strong>
     {{ $studentApplication->user->name }}
 </div>
 
