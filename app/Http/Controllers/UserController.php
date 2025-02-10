@@ -73,7 +73,7 @@ class UserController extends AppBaseController
           $user->last_name =ucwords( $request->input('last_name'));
           $user->email = $request->input('email');
           $user->phone_number = $request->input('phone_number');
-          $user->phone_number_two = $request->input('phone_number_two');
+          $user->phone_number_two = $request->input('phone_number_two')->nullable();
           $user->gender = $request->gender;
           $user->role_id= $request->role_id;
           $user->status= "active";

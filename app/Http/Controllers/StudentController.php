@@ -12,7 +12,7 @@ use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateLearnersRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Log;
 class StudentController extends Controller
 {
     protected $studentsRepository;
@@ -23,11 +23,20 @@ class StudentController extends Controller
         $this->studentsRepository = $studentsRepository;
     }
 
+    // public function index()
+    // {
+    //     $students = Student::with(['user', 'cohort', 'studentApplication'])->get();
+    //     return view('students.index', compact('students'));
+    // }
+
     public function index()
-    {
-        $students = Student::with(['user', 'cohort', 'studentApplication'])->get();
-        return view('students.index', compact('students'));
-    }
+{
+    $students = Student::with(['user', 'cohort', 'studentApplication'])
+                        ->orderBy('created_at', 'desc') // Order by newest first
+                        ->get();
+    return view('students.index', compact('students'));
+}
+
 // FOREIGN KEYS TO BE DISPLAYED
     public function create()
     {
@@ -83,14 +92,22 @@ class StudentController extends Controller
         return view('students.show', compact('student'));
     }
 
-    public function edit(Student $student)
-    {    $cohorts = Cohorts::all();// Explicitly allow access
+    // public function edit(Student $student)
+    // {    $cohorts = Cohorts::all();// Explicitly allow access
 
         
         
        
         
-        return view('students.edit', compact('student','cohorts'));
+    //     return view('students.edit', compact('student','cohorts'));
+    // }
+
+    public function edit(Student $student)
+    {
+        $cohorts = Cohorts::all();
+        $studentApplications = StudentApplication::all();
+
+        return view('students.edit', compact('student', 'cohorts', 'studentApplications'));
     }
 
     // public function update(UpdateLearnersRequest $request, Student $student)
@@ -109,6 +126,9 @@ class StudentController extends Controller
     session()->flash('success', "{$student->user->first_name} has been updated successfully");
     return redirect()->route('students.index');
 }
+
+
+
 
 
   

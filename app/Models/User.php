@@ -82,6 +82,46 @@ class User extends Authenticatable
         'gender' => 'nullable|string',
     ];
 
+
+//     protected static function boot()
+// {
+//     parent::boot();
+
+//     static::creating(function ($user) {
+//         if (!$user->role_id) {
+//             $user->role_id = 3; // Assume 3 is the role ID for students
+//         }
+
+        
+//     });
+
+
+    
+// }
+protected static function boot()
+{
+    parent::boot();
+
+    static::creating(function ($user) {
+        if (!$user->role_id) {
+            $user->role_id = 6; // Default role ID for students
+        }
+    });
+
+    static::created(function ($user) {
+        // Check if an application exists with the same email
+        $application = \App\Models\StudentApplication::where('email', $user->email)->first();
+
+        if ($application) {
+            // Update the user_id field in the student application
+            $application->user_id = $user->id;
+            $application->save();
+        }
+    });
+}
+
+
+
     
 
     // Define relationship with Role model
@@ -89,4 +129,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+    public function studentApplication()
+{
+    return $this->hasOne(StudentApplication::class);
+}
+
 }

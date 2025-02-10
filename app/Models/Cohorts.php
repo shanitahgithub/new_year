@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
+// use Eloquent as Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Illuminate\Database\Eloquent\Model;
 
 class Cohorts extends Model
 {
@@ -47,4 +49,10 @@ class Cohorts extends Model
         'created_at' => 'nullable|date',
         'updated_at' => 'nullable|date'
     ];
+
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\User;
+use Illuminate\Validation\Rule;
 
 class UpdateUserRequest extends FormRequest
 {
@@ -23,10 +24,41 @@ class UpdateUserRequest extends FormRequest
      *
      * @return array
      */
+    // public function rules()
+    // {
+    //     $rules = User::$rules;
+    //     $rules['phone_number_two'] = $rules['phone_number_two'].",".$this->route("user");
+    //     return $rules;
+    // }
+
     public function rules()
     {
+        // Get existing rules from the User model
         $rules = User::$rules;
-        $rules['phone_number_two'] = $rules['phone_number_two'].",".$this->route("user");
+
+        // Exclude current user's email and phone number from uniqueness check
+        $rules['email'] = [
+            'required',
+            'string',
+            'email',
+            Rule::unique('users')->ignore($this->route('user'))
+        ];
+
+        $rules['phone_number'] = [
+            'required',
+            'min:10',
+            'max:10',
+            Rule::unique('users')->ignore($this->route('user'))
+        ];
+
+        $rules['phone_number_two'] = [
+            'nullable',
+            'string',
+            'min:10',
+            'max:10',
+            Rule::unique('users')->ignore($this->route('user'))
+        ];
+
         return $rules;
     }
 }

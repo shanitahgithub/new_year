@@ -164,3 +164,11 @@
 </body>
 
 </html>
+
+public function index()
+// {
+// $applications = StudentApplication::with(['program', 'user'])
+// ->orderBy('created_at', 'desc') // Order by newest first
+// ->get();
+// return view('student_applications.index', compact('applications'));
+// }

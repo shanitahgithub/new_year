@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,3 +86,13 @@ Route::post('/semesters/bulk-delete', [App\Http\Controllers\SemesterController::
 Route::resource('enrollments', App\Http\Controllers\EnrollmentController::class);
 // In routes/web.php
 Route::delete('/users/bulk-destroy', [App\Http\Controllers\UserController::class, 'bulkDestroy'])->name('users.bulkDestroy');
+
+
+Route::post('/apply', [StudentApplicationController::class, 'store']);
+Route::post('/approve/{id}', [StudentApplicationController::class, 'approveStudent'])->middleware('auth'); // Ensure only admins approve
+Route::resource('student_applications', StudentApplicationController::class);
+// Route::put('/students/{students}', [StudentApplicationController::class, 'update'])->name('students.update');
+// Route::delete('/students/{student}', [StudentApplicationController::class, 'destroy'])->name('students.destroy');
+Route::post('/student-applications', [StudentApplicationController::class, 'store'])->name('student_applications.store');
+Route::post('/applications/{id}/approve', [StudentApplicationController::class, 'approveStudent'])->name('applications.approve');
+Route::put('/student_applications/{id}', [StudentApplicationController::class, 'update'])->name('student_applications.update');

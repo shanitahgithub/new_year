@@ -46,10 +46,18 @@ $roles = Role::pluck('name', 'id')->toArray();
     {!! Form::text('phone_number_two', null, ['class' => 'form-control','min' => 10,'max' => 10]) !!}
 </div>
 
+{{-- <div class="form-group col-sm-6">
+    {!! Form::label('status', 'Status:') !!}
+    {!! Form::select('status', ['Active' => 'Active', 'Inactive' => 'Inactive'], null, ['class' => 'form-control']) !!}
+</div> --}}
+
+
+
 <!-- Gender Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('gender', 'Gender:') !!}
-    {!! Form::select('gender', ['female' => 'Female', 'male' => 'Male'], null, ['class' => 'form-control', 'placeholder' => 'Select Gender']) !!}
+    {!! Form::select('gender', ['female' => 'Female', 'male' => 'Male'], null, ['class' => 'form-control', 'placeholder'
+    => 'Select Gender']) !!}
 </div>
 
 <!-- Role Id Field -->
