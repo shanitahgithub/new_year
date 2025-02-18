@@ -60,6 +60,9 @@ Route::resource('roles', App\Http\Controllers\RolesController::class);
 use App\Http\Controllers\EnrollmentController;
 
 Route::resource('enrollments', EnrollmentController::class);
+Route::resource('referral_sources', App\Http\Controllers\ReferralSourceController::class);
+Route::resource('referrals', App\Http\Controllers\StudentApplicationReferralSourceController::class);
+
 
 // Route for bulk delete
 
@@ -96,3 +99,12 @@ Route::resource('student_applications', StudentApplicationController::class);
 Route::post('/student-applications', [StudentApplicationController::class, 'store'])->name('student_applications.store');
 Route::post('/applications/{id}/approve', [StudentApplicationController::class, 'approveStudent'])->name('applications.approve');
 Route::put('/student_applications/{id}', [StudentApplicationController::class, 'update'])->name('student_applications.update');
+// Route::delete('/courses/bulk-destroy', [CourseUnitController::class, 'bulkDestroy'])->name('courses.bulkDestroy');
+Route::delete('/course-units/bulk-destroy', [App\Http\Controllers\CourseUnitController::class, 'bulkDestroy'])->name('course-units.bulkDestroy');
+
+
+use App\Http\Controllers\RecentActivityController;
+
+Route::get('/admin/dashboard', [RecentActivityController::class, 'index'])->name('admin.dashboard');
+Route::post('/admin/recent-activities', [RecentActivityController::class, 'store'])->name('recent-activities.store');
+Route::delete('/admin/recent-activities/{id}', [RecentActivityController::class, 'destroy'])->name('recent-activities.destroy');

@@ -354,15 +354,29 @@
     <!-- Header -->
     <div class="header">
         <img src="{{ asset('storage/images/try.png') }}" alt="logo">
+
+
         {{-- <img src="" alt=""> --}}
         {{-- <div>
             <a href="{{ url('/') }}" class="home">Home</a>
         </div>
         --}}
-        <div class="search-bar">
+        {{-- <div class="search-bar">
             <input type="text" placeholder="Search for courses">
             <i class="fas fa-search"></i>
+        </div> --}}
+        <div class="search-bar">
+            <form action="index.php" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="search" placeholder="Search for courses"
+                        value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
         </div>
+
         <div>
 
         </div>

@@ -1,4 +1,4 @@
-<div style="max-height: 400px; overflow-y: auto;">
+<div style="max-height: 400px; ">
     <table id="lecturerTable" class="table table-bordered">
         <thead class="thead-dark">
 
@@ -32,10 +32,10 @@
                     @endif
                 </td>
                 <td class="text-center">
-                    {{-- <a href="{{ route('lecturers.show', $lecturer->id) }}" class="btn btn-light btn-sm"><i
+                    <a href="{{ route('lecturers.show', $lecturer->id) }}" class="btn btn-light btn-sm"><i
                             class="fa fa-eye"></i></a>
                     <a href="{{ route('lecturers.edit', $lecturer->id) }}" class="btn btn-warning btn-sm"><i
-                            class="fa fa-edit"></i></a> --}}
+                            class="fa fa-edit"></i></a>
                     <form action="{{ route('lecturers.destroy', $lecturer->id) }}" method="POST" class="d-inline"
                         onsubmit="return confirm('Are you sure you want to delete this lecturer?');">
                         @csrf

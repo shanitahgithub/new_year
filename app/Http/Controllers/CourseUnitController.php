@@ -134,11 +134,14 @@ public function index()
 
     public function bulkDestroy(Request $request)
 {
-    $ids = $request->input('ids', []);
-    if (!empty($ids)) {
-        CourseUnit::whereIn('id', $ids)->delete();
-        return redirect()->route('course-units.index')->with('success', 'Selected course units have been deleted.');
+    $courseUnitIds = $request->input('ids');
+
+    if (is_array($courseUnitIds) && count($courseUnitIds) > 0) {
+        CourseUnit::whereIn('id', $courseUnitIds)->delete();
+        return response()->json(['success' => 'Selected course units have been deleted.']);
     }
-    return redirect()->route('course-units.index')->with('error', 'No course units selected for deletion.');
+
+    return response()->json(['error' => 'No course units selected for deletion.'], 400);
 }
+
 }

@@ -229,3 +229,22 @@
     <a class="nav-link" href="{{ route('enrollments.index') }}"><i
             class="fa fa-building"></i><span>Enrollments</span></a>
 </li>
+
+<li class="{{ Request::is('referral_sources*') ? 'active' : '' }}">
+    <a href="{{ route('referral_sources.index') }}">
+        <i class="fa fa-cog"></i><span>Referral Sources</span>
+    </a>
+</li>
+
+<li class="{{ Request::is('referrals*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('referrals.index') }}">
+        <i class="fa fa-user"></i><span>StudentAppReferralSource</span>
+    </a>
+</li>
+
+
+{{-- <li class="{{ Request::is('recent-activities*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('/admin/recent-activities') }}">
+        <i class="fa fa-user"></i><span>StudentAppReferralSource</span>
+    </a>
+</li> --}}
