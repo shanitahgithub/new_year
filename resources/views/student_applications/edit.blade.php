@@ -2,6 +2,8 @@
 <?php
 use App\Models\Program;
 $programs = Program::pluck('name','id');
+$cohorts = Cohorts::pluck('name','id');
+
 ?>
 
 
@@ -322,10 +324,17 @@ $programs = Program::pluck('name','id');
                 value="{{ old('secondary_school', $application->secondary_school) }}">
         </div>
 
+
+
         <div class="form-group">
             <label for="combination">Combination</label>
             <input type="text" name="combination" id="combination" class="form-control"
                 value="{{ old('combination', $application->combination) }}">
+        </div>
+
+        <div class="form-group">
+            <label for="uce">Uce</label>
+            <input type="file" name="uce" id="uce" class="form-control" value="{{ old('uce', $application->uce) }}">
         </div>
 
         <div class="form-group">

@@ -145,22 +145,23 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Phone Number</th>
-                    <th>Phone Number 2</th>
+                    {{-- <th>Phone Number 2</th> --}}
                     <th>Email</th>
                     <th>Gender</th>
-                    <th>Date of Birth</th>
-                    <th>Address</th>
+                    {{-- <th>Date of Birth</th> --}}
+                    {{-- <th>Address</th> --}}
                     <th>Status</th>
                     <th>Program</th>
-                    <th>Points Scored</th>
-                    <th>Secondary School</th>
-                    <th>Guardian Name</th>
-                    <th>Guardian Contact</th>
-                    <th>Nationality</th>
+                    <th>Cohort</th>
+                    {{-- <th>Points Scored</th> --}}
+                    {{-- <th>Secondary School</th> --}}
+                    {{-- <th>Guardian Name</th> --}}
+                    {{-- <th>Guardian Contact</th> --}}
+                    {{-- <th>Nationality</th> --}}
                     <th>Interview Date</th>
                     <th>Interview Result</th>
-                    <th>Submitted Documents</th>
-                    <th>Combination</th>
+                    {{-- <th>Submitted Documents</th> --}}
+                    {{-- <th>Combination</th> --}}
                     <th>UACE Year of Completion</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -173,11 +174,11 @@
                     <td>{{ $application->firstname }}</td>
                     <td>{{ $application->lastname }}</td>
                     <td>{{ $application->phone_number }}</td>
-                    <td>{{ $application->phone_number2 }}</td>
+                    {{-- <td>{{ $application->phone_number2 }}</td> --}}
                     <td>{{ $application->email }}</td>
                     <td>{{ $application->gender }}</td>
-                    <td>{{ $application->date_of_birth }}</td>
-                    <td>{{ $application->address }}</td>
+                    {{-- <td>{{ $application->date_of_birth }}</td> --}}
+                    {{-- <td>{{ $application->address }}</td> --}}
                     <td>
                         @if ($application->status == 'approved')
                         <span class="badge badge-success">{{ $application->status }}</span>
@@ -190,11 +191,12 @@
                         @endif
                     </td>
                     <td>{{ $application->program->name }}</td>
-                    <td>{{ $application->points_scored }}</td>
-                    <td>{{ $application->secondary_school }}</td>
-                    <td>{{ $application->guardian_name }}</td>
-                    <td>{{ $application->guardian_contact }}</td>
-                    <td>{{ $application->nationality }}</td>
+                    <td>{{ $application->cohort->name }}</td>
+                    {{-- <td>{{ $application->points_scored }}</td> --}}
+                    {{-- <td>{{ $application->secondary_school }}</td> --}}
+                    {{-- <td>{{ $application->guardian_name }}</td> --}}
+                    {{-- <td>{{ $application->guardian_contact }}</td> --}}
+                    {{-- <td>{{ $application->nationality }}</td> --}}
                     <td>{{ $application->interview_date }}</td>
                     <td>
                         @if ($application->interview_result == 'passed')
@@ -207,8 +209,8 @@
                         <span class="badge bg-secondary">{{ ucfirst($application->interview_result) }}</span>
                         @endif
                     </td>
-                    <td>{{ $application->submitted_documents }}</td>
-                    <td>{{ $application->combination }}</td>
+                    {{-- <td>{{ $application->submitted_documents }}</td> --}}
+                    {{-- <td>{{ $application->combination }}</td> --}}
                     <td>{{ $application->uace_year_of_completion }}</td>
                     <td class="text-center">
                         <a href="{{ route('student_applications.show', $application->id) }}"

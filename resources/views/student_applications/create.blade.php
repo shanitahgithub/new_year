@@ -14,7 +14,7 @@
     </div>
     @endif
 
-    <form action="{{ route('student_applications.store') }}" method="POST">
+    <form action="{{ route('student_applications.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="row">
@@ -70,10 +70,7 @@
                     <input type="text" name="address" id="address" class="form-control" value="{{ old('address') }}">
                 </div>
 
-                {{-- <div class="mb-3">
-                    <label for="status" class="form-label">Application Status</label>
-                    <input type="text" name="status" id="status" class="form-control" value="{{ old('status') }}">
-                </div> --}}
+
             </div>
 
             <div class="col-md-6">
@@ -88,93 +85,130 @@
                     </select>
                 </div>
 
-                <div class="mb-3">
-                    <label for="nationality" class="form-label">Nationality</label>
-                    <input type="text" name="nationality" id="nationality" class="form-control"
-                        value="{{ old('nationality') }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="guardian_name" class="form-label">Guardian Name</label>
-                    <input type="text" name="guardian_name" id="guardian_name" class="form-control"
-                        value="{{ old('guardian_name') }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="guardian_contact" class="form-label">Guardian Contact</label>
-                    <input type="text" name="guardian_contact" id="guardian_contact" class="form-control"
-                        value="{{ old('guardian_contact') }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="interview_date" class="form-label">Interview Date</label>
-                    <input type="date" name="interview_date" id="interview_date" class="form-control"
-                        value="{{ old('interview_date') }}">
-                </div>
-
-                {{-- <div class="mb-3">
-                    <label for="interview_result" class="form-label">Interview Result</label>
-                    <input type="text" name="interview_result" id="interview_result" class="form-control"
-                        value="{{ old('interview_result') }}">
-                </div> --}}
-
-                <div class="mb-3">
-                    <label for="interview_result" class="form-label">Interview Result</label>
-                    <select name="interview_result" id="interview_result" class="form-control">
-                        <option value="">Select Interview Result</option>
-                        <option value="Passed" {{ old('interview_result')=='Passed' ? 'selected' : '' }}>Passed</option>
-                        <option value="Failed" {{ old('interview_result')=='Failed' ? 'selected' : '' }}>Failed</option>
-                        <option value="Pending" {{ old('interview_result')=='Pending' ? 'selected' :''}}>Pending
-                        </option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="submitted_documents" class="form-label">Submitted Documents</label>
-                    <input type="text" name="submitted_documents" id="submitted_documents" class="form-control"
-                        value="{{ old('submitted_documents') }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="secondary_school" class="form-label">Secondary School</label>
-                    <input type="text" name="secondary_school" id="secondary_school" class="form-control"
-                        value="{{ old('secondary_school') }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="combination" class="form-label">Combination</label>
-                    <input type="text" name="combination" id="combination" class="form-control"
-                        value="{{ old('combination') }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="status" class="form-label">Application Status</label>
-                    <select name="status" id="status" class="form-control" required>
-                        <option value="">Select Status</option>
-                        <option value="pending" {{ old('status')=='pending' ? 'selected' : '' }}>Pending</option>
-                        <option value="approved" {{ old('status')=='approved' ? 'selected' : '' }}>Approved</option>
-                        <option value="rejected" {{ old('status')=='rejected' ? 'selected' : '' }}>Rejected</option>
-                    </select>
-                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="cohort_id" class="form-label">Cohort</label>
+                        <select name="cohort_id" id="cohort_id" class="form-control" required>
+                            <option value="">Select Cohort</option>
+                            @foreach ($cohorts as $cohort)
+                            <option value="{{ $cohort->id }}" {{ old('cohort_id')==$cohort->id ? 'selected' : '' }}>{{
+                                $cohort->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
 
 
-                <div class="mb-3">
-                    <label for="points_scored" class="form-label">Points Scored</label>
-                    <input type="number" step="0.01" name="points_scored" id="points_scored" class="form-control"
-                        value="{{ old('points_scored') }}">
-                </div>
+                    <div class="mb-3">
+                        <label for="nationality" class="form-label">Nationality</label>
+                        <input type="text" name="nationality" id="nationality" class="form-control"
+                            value="{{ old('nationality') }}">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="uace_year_of_completion" class="form-label">UACE Year of Completion</label>
-                    <input type="number" name="uace_year_of_completion" id="uace_year_of_completion"
-                        class="form-control" value="{{ old('uace_year_of_completion') }}" min="1900"
-                        max="{{ date('Y') }}">
+                    <div class="mb-3">
+                        <label for="guardian_name" class="form-label">Guardian Name</label>
+                        <input type="text" name="guardian_name" id="guardian_name" class="form-control"
+                            value="{{ old('guardian_name') }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="guardian_contact" class="form-label">Guardian Contact</label>
+                        <input type="text" name="guardian_contact" id="guardian_contact" class="form-control"
+                            value="{{ old('guardian_contact') }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="interview_date" class="form-label">Interview Date</label>
+                        <input type="date" name="interview_date" id="interview_date" class="form-control"
+                            value="{{ old('interview_date') }}">
+                    </div>
+
+                    {{-- <div class="mb-3">
+                        <label for="interview_result" class="form-label">Interview Result</label>
+                        <input type="text" name="interview_result" id="interview_result" class="form-control"
+                            value="{{ old('interview_result') }}">
+                    </div> --}}
+
+                    <div class="mb-3">
+                        <label for="interview_result" class="form-label">Interview Result</label>
+                        <select name="interview_result" id="interview_result" class="form-control">
+                            <option value="">Select Interview Result</option>
+                            <option value="Passed" {{ old('interview_result')=='Passed' ? 'selected' : '' }}>Passed
+                            </option>
+                            <option value="Failed" {{ old('interview_result')=='Failed' ? 'selected' : '' }}>Failed
+                            </option>
+                            <option value="Pending" {{ old('interview_result')=='Pending' ? 'selected' :''}}>Pending
+                            </option>
+                        </select>
+                    </div>
+
+                    {{-- <div class="mb-3">
+                        <label for="submitted_documents" class="form-label">Submitted Documents</label>
+                        <input type="text" name="submitted_documents" id="submitted_documents" class="form-control"
+                            value="{{ old('submitted_documents') }}">
+                    </div> --}}
+
+                    <div class="mb-3">
+                        <label for="secondary_school" class="form-label">Secondary School</label>
+                        <input type="text" name="secondary_school" id="secondary_school" class="form-control"
+                            value="{{ old('secondary_school') }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="combination" class="form-label">Combination</label>
+                        <input type="text" name="combination" id="combination" class="form-control"
+                            value="{{ old('combination') }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Application Status</label>
+                        <select name="status" id="status" class="form-control" required>
+                            <option value="">Select Status</option>
+                            <option value="pending" {{ old('status')=='pending' ? 'selected' : '' }}>Pending</option>
+                            <option value="approved" {{ old('status')=='approved' ? 'selected' : '' }}>Approved</option>
+                            <option value="rejected" {{ old('status')=='rejected' ? 'selected' : '' }}>Rejected</option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label for="points_scored" class="form-label">Points Scored</label>
+                        <input type="number" step="0.01" name="points_scored" id="points_scored" class="form-control"
+                            value="{{ old('points_scored') }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uce_certificate" class="form-label">UCE Certificate</label>
+                        <input type="file" name="uce" id="uce" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uace_certificate" class="form-label">UACE Certificate</label>
+                        <input type="file" name="uace" id="uace" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="national_id" class="form-label">National ID</label>
+                        <input type="file" name="national_id" id="national_id" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recommendation_letter" class="form-label">Recommendation Letter</label>
+                        <input type="file" name="recommendation_letter" id="recommendation_letter" class="form-control"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uace_year_of_completion" class="form-label">UACE Year of Completion</label>
+                        <input type="number" name="uace_year_of_completion" id="uace_year_of_completion"
+                            class="form-control" value="{{ old('uace_year_of_completion') }}" min="1900"
+                            max="{{ date('Y') }}">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <button type="submit" class="btn btn-primary">Submit Application</button>
+            <button type="submit" class="btn btn-primary">Submit Application</button>
     </form>
 </div>
 @endsection

@@ -314,7 +314,7 @@
                 <th>Status</th>
                 <th>Cohort</th>
                 <th>Created By</th>
-                <th>Student Application ID</th>
+                {{-- <th>Student Application ID</th> --}}
                 <th>Actions</th>
             </tr>
         </thead>
@@ -338,7 +338,7 @@
                 </td>
                 <td>{{ $student->cohort->name }}</td>
                 <td>{{ Auth::user()->first_name }}</td>
-                <td>{{ $student->student_application_id }}</td>
+                {{-- <td>{{ $student->student_application_id }}</td> --}}
                 <td>
                     <div class="btn-group" role="group">
                         {{-- <a href="{{ route('students.show', $student->id) }}" class="btn btn-info btn-sm">View</a>

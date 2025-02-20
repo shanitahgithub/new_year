@@ -15,18 +15,19 @@ use Illuminate\Support\Facades\Log;
 class StudentApplicationController extends Controller
 {
     /**
-     * Display a listing of the student applications (for admins).
+     * Displaying a listing of the student applications (for admins).
      */
     public function index()
     {
 
-        $applications = StudentApplication::with('program')->get();
+        $applications = StudentApplication::with('program','cohort')->get();
         return view('student_applications.index', compact('applications'));
     }
     public function create()
     {
+        $cohorts = Cohorts::all();
         $programs = Program::all();
-        return view('student_applications.create', compact('programs'));
+        return view('student_applications.create', compact('programs','cohorts'));
     }
 
     
@@ -35,7 +36,7 @@ class StudentApplicationController extends Controller
 
 public function store(Request $request)
 {
-    // Validate the incoming request data
+    // Validating the incoming request data
     $request->validate([
         'firstname' => 'required|string|max:255',
         'lastname' => 'required|string|max:255',
@@ -45,19 +46,54 @@ public function store(Request $request)
         'date_of_birth' => 'required|date',
         'address' => 'nullable|string',
         'program_id' => 'required|exists:programs,id',
+        'cohort_id'=> 'required|exists:cohorts,id',
         'nationality' => 'nullable|string',
         'guardian_name' => 'nullable|string',
         'guardian_contact' => 'nullable|string',
         'interview_date' => 'nullable|date',
         'interview_result' => 'nullable|string',
-        'submitted_documents' => 'nullable|string',
+        // 'submitted_documents' => 'nullable|string',
+        // 'uce'=> 'nullable|string',               
+        // 'uace' => 'nullable|string',              
+        // 'national_id' => 'nullable|string',       
+        // 'recommendation_letter'=> 'nullable|string',
+
+        'uace' => 'required|file|mimes:pdf,jpg,png|max:7096', // 4MB max size
+        'uce' => 'required|file|mimes:pdf,jpg,png|max:7096', // 4MB max size
+        'recommendation_letter' => 'required|file|mimes:pdf,jpg,png|max:7096', // 4MB max size
+        'national_id' => 'required|file|mimes:pdf,jpg,png|max:7096', // 4MB max size
+
         'secondary_school' => 'nullable|string',
         'combination' => 'nullable|string',
         'points_scored' => 'nullable|numeric',
         'uace_year_of_completion' => 'nullable|integer|min:1900|max:' . date('Y'),
     ]);
 
-    // Create the user first
+    
+
+    
+
+
+    $documents = [];
+
+    if ($request->hasFile('uce')) {
+        $documents['uce'] = $request->file('uce')->store('documents', 'public');
+    }
+
+    if ($request->hasFile('uace')) {
+        $documents['uace'] = $request->file('uace')->store('documents', 'public');
+    }
+
+    if ($request->hasFile('recommendation_letter')) {
+        $documents['recommendation_letter'] = $request->file('recommendation_letter')->store('documents', 'public');
+    }
+
+    if ($request->hasFile('national_id')) {
+        $documents['national_id'] = $request->file('national_id')->store('documents', 'public');
+    }
+
+
+    // Creating the user first
     $user = User::create([
         'first_name' => $request->firstname,
         'last_name' => $request->lastname,
@@ -85,12 +121,23 @@ public function store(Request $request)
         'guardian_contact' => $request->guardian_contact,
         'interview_date' => $request->interview_date,
         'interview_result' => $request->interview_result,
-        'submitted_documents' => $request->submitted_documents,
+        'cohort_id'=>$request->cohort_id,
+        'uce' => $request->uce,
+        'uace' => $request->uace,
+        'recommendation_letter' => $request->recommendation_letter,
+        'national_id' => $request->national_id,
+        // 'submitted_documents' => $request->submitted_documents,
         'secondary_school' => $request->secondary_school,
         'combination' => $request->combination,
         'points_scored' => $request->points_scored,
         'uace_year_of_completion' => $request->uace_year_of_completion,
     ]);
+
+
+
+
+
+
 
     // Redirect after successful form submission
     return redirect()->route('student_applications.index')->with('success', 'Student application submitted successfully.');
@@ -100,11 +147,11 @@ public function store(Request $request)
 
 
     /**
-     * Display a specific student application.
+     * Displaying a specific student application.
      */
     public function show($id)
     {
-        $application = StudentApplication::with('program')->find($id);
+        $application = StudentApplication::with('program','cohort')->find($id);
 
         if (!$application) {
             return redirect()->route('student_pplications.index')->with('error', 'Application not found.');
@@ -120,7 +167,7 @@ public function store(Request $request)
         $application = StudentApplication::findOrFail($id);
         
         
-        $programs = Program::all(); // Fetch all available programs
+        $programs = Program::all(); // Fetching all available programs
 
         return view('student_applications.edit', compact('application', 'programs'));
     }
@@ -243,7 +290,7 @@ public function update(Request $request, $id)
             'reg_number' => $regNumber, // Use the custom registration number
             'admission_date' => now(), // Current date as admission date
             'status' => 'active', // Default status as 'active'
-            'cohort_id' => 1, // Assuming you have a default cohort or fetch based on the program
+            'cohort_id' =>  $application->cohort_id, // Assuming you have a default cohort or fetch based on the program
             'created_by' => auth()->user()->id, // The user performing the action
             'student_application_id' => $application->id, // Link to the application
         ]);

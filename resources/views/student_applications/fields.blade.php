@@ -1,6 +1,7 @@
 <?php
 use App\Models\;
 $users = User::pluck('first_name', 'last_name','id');
+$cohorts=Cohorts::pluck('name','id');
 ?>
 
 
@@ -67,6 +68,11 @@ $users = User::pluck('first_name', 'last_name','id');
 <div class="form-group">
     <label for="program_id">Program:</label>
     <p>{{ $studentApplication->program->name }}</p>
+</div>
+
+<div class="form-group">
+    <label for="cohort_id">Cohort:</label>
+    <p>{{ $studentApplication->cohort->name }}</p>
 </div>
 
 <div class="form-group">

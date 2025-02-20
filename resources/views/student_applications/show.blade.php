@@ -47,7 +47,11 @@
             <p><strong>Combination:</strong> {{ $application->combination }}</p>
             <p><strong>Interview Date:</strong> {{ $application->interview_date ?? 'N/A' }}</p>
             <p><strong>Interview Result:</strong> {{ ucfirst($application->interview_result) }}</p>
-            <p><strong>Submitted Documents:</strong> {{ json_decode($application->submitted_documents) }}</p>
+            {{-- <p><strong>Uce:</strong> {{ ($application->uce) }}</p> --}}
+
+            <p><strong>Uce:</strong> <img src="{{ asset('storage/' . $application->uce) }}" alt="UCE Certificate"
+                    style="width: 200px; height: auto;"></p>
+
             <p><strong>UACE Year of Completion:</strong> {{ $application->uace_year_of_completion ?? 'N/A' }}</p>
         </div>
     </div>

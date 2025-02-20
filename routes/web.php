@@ -108,3 +108,12 @@ use App\Http\Controllers\RecentActivityController;
 Route::get('/admin/dashboard', [RecentActivityController::class, 'index'])->name('admin.dashboard');
 Route::post('/admin/recent-activities', [RecentActivityController::class, 'store'])->name('recent-activities.store');
 Route::delete('/admin/recent-activities/{id}', [RecentActivityController::class, 'destroy'])->name('recent-activities.destroy');
+
+
+
+// use App\Http\Livewire\ApplyNow;
+
+// Route::get('/apply-now', ApplyNow::class)->name('apply-now');
+
+
+// Route::get('/search-courses', [ProgramController::class, 'searchCourses'])->name('search.courses');

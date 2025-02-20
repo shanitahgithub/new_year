@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use File;
@@ -29,6 +30,10 @@ class ImageUploader extends Model
 
             $file->move($destinationPath,$file_url);
 
+            DB::table('uce')->insert($data);
+
             return $file_url;
     }
+
+   
 }
